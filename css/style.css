@@ -1,0 +1,160 @@
+/* Paleta de colores
+Rojo intenso #FF33737
+Rojo oscuro #8B0A0A
+Negro
+Gris oscuro #333333 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: whitesmoke; /* Temporal para poder ver */
+    background: linear-gradient(to bottom, #8B0A0A, #000000);
+    background-attachment: fixed; /* Para que el fondo no se repita */
+    overflow-x: hidden;
+}
+
+/* Menu de navegacion */
+.menu {
+    display: grid;
+    grid-template-columns: 150px auto;
+    align-items: center;
+}
+    
+
+.menu-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+        
+nav ul a{
+    color: white;
+    background-color: #000000;
+}
+
+/* Botón hamburguesa (oculto por defecto en escritorio) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+/* Portada */
+.portada h1{
+    color: whitesmoke;
+}
+
+
+.portada {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    place-items: center;
+}
+    
+.img-port {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+}
+
+.title-port {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    overflow: hidden;
+    width: 90%;
+    max-width: 1200px;
+    height: 70vh;
+    position: relative;
+    margin: 20px auto;
+}
+
+/* Pista del carrusel */
+.carousel-track {
+    display: flex;
+    gap: 10px;
+    animation: scroll 50s linear infinite;
+    width: max-content;
+}
+
+/* Imágenes del carrusel */
+.carousel-image {
+    height: 300px; 
+    width: 200px;
+    flex: 0 0 auto; /* Cada imagen ocupa su espacio */
+    object-fit: cover; 
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto de expansión al pasar el cursor */
+.carousel-image:hover {
+    transform: scale(1.1); 
+}
+
+/* Animación de desplazamiento infinito */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .menu {
+        grid-template-columns: 1fr; /* Logo y hamburguesa en una fila */
+    }
+
+    .menu-links {
+        display: none; /* Ocultar los enlaces inicialmente */
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #8B0A0A;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .menu-links.active {
+        display: flex; /* Mostrar enlaces cuando se hace clic en el botón */
+    }
+
+    .hamburger {
+        display: block; /* Mostrar botón en móviles */
+    }
+
+    .carousel-container {
+        height: 50vh; /* Reduce la altura en móviles */
+    }
+
+    .carousel-track {
+        gap: 5px; /* Reduce el espacio entre imágenes */
+    }
+
+    .carousel-image {
+        max-width: 150px; /* Ajusta el ancho máximo en pantallas pequeñas */
+    }
+}
