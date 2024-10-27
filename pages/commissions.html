@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,91 +13,134 @@
     <!-- ---------------- -->
     <title>Comisiones</title>
 </head>
+
 <body>
+    <!-- Menu de navegacion -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="portfolio.html">Portafolio</a></li>
-                <li><a href="commissions.html">Comisiones</a></li>
-                <li><a href="about.html">Sobre Mi</a></li>
-                <li><a href="contact.html">Contacto</a></li>
-            </ul>
+        <nav class="menu">
+            <div class="logo">
+                <a href="../index.html">BeKus</a>
+            </div>
+            <!-- Menu hamburguesa para moviles -->
+            <button class="hamburger" id="hamburger">
+                ☰
+            </button>
+
+            <div class="menu-links" id="nav-links">
+                <button class="close" id="close">&times;</button> <!-- Botón de cierre -->
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="portfolio.html">Portafolio</a></li>
+                    <li><a href="commissions.html">Comisiones</a></li>
+                    <li><a href="about.html">Sobre Mi</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <main>
+    <main class="main-com-form">
         <!-- Titulo -->
-        <h1>Solicita tu comision</h1>
-        <h2>Personaliza tu obra, hecha a medida para ti</h2>
+        <div class="com-form-title">
+            <h1>Solicita tu comision</h1>
+            <h2>Personaliza tu obra, hecha a medida para ti</h2>
+        </div>
 
         <!-- Formulario de solicitud -->
-         <section>
+        <section class="form-container">
             <h3>Completa el siguiente formulario</h3>
 
-            <form action="#" method="get">
-                <label for="nombre-comision">Nombre</label>
-                <input type="text" name="" id="nombre-comision" placeholder="ej: Jane">
+            <form class="formulario-comision" action="#" method="get">
+                <div class="com-nombre">
+                    <label for="nombre-comision">Nombre</label>
+                    <input type="text" name="" id="nombre-comision" placeholder="ej: Jane">
+                </div>
 
-                <label for="apellido-comision">Apellido</label>
-                <input type="text" name="" id="apellido-comision" placeholder="ej: Doe">
-                <br>
-                <label for="email-comision">Correo electronico</label>
-                <input type="email" name="" id="email-comision" placeholder="ej: janedoe@gmail.com">
+                <div class="com-apellido">
+                    <label for="apellido-comision">Apellido</label>
+                    <input type="text" name="" id="apellido-comision" placeholder="ej: Doe">
+                </div>
 
-                <label for="telefono-comision">Telefono</label>
-                <input type="text" name="" id="telefono-comision" placeholder="+54123456">
+                <div class="com-email">
+                    <label for="email-comision">Correo electronico</label>
+                    <input type="email" name="" id="email-comision" placeholder="ej: janedoe@gmail.com">
+                </div>
 
-                <br>
+                <div class="com-telefono">
+                    <label for="telefono-comision">Telefono</label>
+                    <input type="text" name="" id="telefono-comision" placeholder="+54123456">
+                </div>
 
-                <label for="titulo-comision">Breve descripcion de tu pedido</label>
-                <input type="text" name="" id="titulo-comision" placeholder="Escriba aqui...">
+                <div class="com-desc-title">
+                    <label for="titulo-comision">Breve descripcion de tu pedido</label>
+                    <input type="text" name="" id="titulo-comision" placeholder="Escriba aqui...">
+                </div>
 
-                <br>
+                <div class="com-txt-area">
+                    <textarea name="" id="mensaje" placeholder="Escriba aqui..."></textarea>
+                </div>
 
-                <textarea name="" id="mensaje" placeholder="Escriba aqui..."></textarea>
+                <div class="com-deseado">
+                    <label for="formatos">Elija los formatos deseados</label>
+                </div>
 
-                <br>
+                <div class="psd-label">
+                    <label for="psd">PSD</label>
+                    <input type="checkbox" name="psd" id="psd">
+                </div>
 
-                <label for="formatos">Elija los formatos deseados</label>
-                <br>
-                <label for="psd">PSD</label>
-                <input type="checkbox" name="psd" id="psd">
+                <div class="publ-label">
+                    <label for="publicidad">Publicidad</label>
+                    <input type="checkbox" name="publi" id="publicidad">
+                </div>
 
-                <label for="publicidad">Publicidad</label>
-                <input type="checkbox" name="publi" id="publicidad">
+                <div class="res-label">
+                    <label for="4k">4K/8K</label>
+                    <input type="checkbox" name="4k" id="4k">
+                </div>
 
-                <label for="4k">4K/8K</label>
-                <input type="checkbox" name="4k" id="4k">
+                <div class="pers-label">
+                    <label for="personalizado">Personalizado</label>
+                    <input type="checkbox" name="personalizado" id="personalizado">
+                </div>
 
-                <label for="personalizado">Personalizado</label>
-                <input type="checkbox" name="personalizado" id="personalizado">
+                <div class="ref-label">
+                    <label for="subida-comision">Suba archivos o imagenes de referencia (opcional)</label>
+                </div>
 
-                <br>
+                <div class="subida-label">
+                    <input type="file" name="" id="subida-comision">
+                </div>
 
-                <label for="subida-comision">Suba archivos o imagenes de referencia (opcional)</label>
-                <br>
-                <input type="file" name="" id="subida-comision">
-
-                <br>
-
-                <button type="reset">Cancelar</button>
-                <button type="submit">Enviar</button>
+                <div class="com-cancelar">
+                    <button type="reset">Cancelar</button>
+                </div>
+                <div class="com-enviar">
+                    <button type="submit">Enviar</button>
+                </div>
             </form>
-         </section>
+        </section>
 
-         <section>
-            <h2>Preguntas frecuentes</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio vero obcaecati facilis modi a, fugiat quo reprehenderit quia, necessitatibus minima harum provident autem deserunt aspernatur alias laudantium corrupti unde sequi.</p>
-         </section>
     </main>
 
+    <section>
+        <h2>Preguntas frecuentes</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio vero obcaecati facilis modi a,
+            fugiat quo reprehenderit quia, necessitatibus minima harum provident autem deserunt aspernatur alias
+            laudantium corrupti unde sequi.</p>
+    </section>
+
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
+        <h3>BeKus - Artista Gráfico</h3>
         <p>&copy; BeKus - 2024. Todos los derechos reservados.</p>
-        <a href="#">X</a>
-        <a href="#">Instagram</a>
-        <a href="#">Patreon</a>
-     </footer>
+        <a href="#" class="icon"><i class="fas fa-times"></i></a>
+        <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="icon"><i class="fab fa-patreon"></i></a>
+    </footer>
+    <script src="../js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/ffa1f2b655.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
