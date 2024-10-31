@@ -1,627 +1,524 @@
+@charset "UTF-8";
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Estilo del scroll */
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: black;
-    border-radius: 5px;
+  background-color: black;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: linear-gradient(to bottom, #8B0A0A, #000000);
-    border-radius: 5px;
+  background: linear-gradient(to bottom, #8B0A0A, #000000);
+  border-radius: 5px;
 }
 
 body {
-    color: whitesmoke;
-    /* Temporal para poder ver */
-    background: linear-gradient(to bottom, #8B0A0A, #000000);
-    background-attachment: fixed;
-    /* Para que el fondo no se repita */
-    background-size: cover;
+  color: whitesmoke;
+  background: linear-gradient(to bottom, #8B0A0A, #000000);
+  background-attachment: fixed;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+header nav {
+  display: grid;
+  grid-template-columns: 150px auto;
+  align-items: center;
+  position: relative;
+}
+header nav .logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+header nav .hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+header nav .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001; /* Asegúrate de que esté por encima del menú */
+}
+header nav .menu-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+header nav .menu-links ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+header nav .menu-links ul li {
+  display: inline;
+}
+header nav .menu-links ul a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding-right: 8px;
+}
+
+.index-main .portada {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+  place-items: center;
+}
+.index-main .img-port {
+  grid-column: span 2/span 2;
+  grid-row: span 2/span 2;
+}
+.index-main .title-port {
+  grid-column: span 2/span 2;
+  grid-row: span 2/span 2;
+  grid-column-start: 4;
+  text-align: center;
+}
+.index-main .title-port p {
+  font-size: 25px;
+  margin-top: 15px;
+}
+.index-main .carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 150px;
+}
+.index-main .carousel-container .carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+.index-main .carousel-container .carousel-track .carousel-image {
+  width: 250px;
+  /* Ajusta el ancho al contenedor */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  max-height: 100vh;
+  /* Limita la altura máxima */
+  object-fit: cover;
+  /* Cubre el área sin deformar */
+}
+.index-main .boton-portfolio {
+  display: flex;
+  justify-content: center;
+}
+.index-main .boton-portfolio button {
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.index-main .boton-portfolio button:hover {
+  background-color: #8B0A0A;
+}
+.index-main .boton-portfolio a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+.index-main .comision-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+  color: white;
+  margin: auto;
+  margin-top: 150px;
+}
+.index-main .comision-container .comision-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index-main .comision-container .comision-title h2 {
+  font-size: 40px;
+}
+.index-main .comision-container .comision-button {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index-main .comision-container .comision-button button {
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.index-main .comision-container .comision-button button:hover {
+  background-color: #8B0A0A;
+}
+.index-main .comision-container .comision-button a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+.index-main .comision-container .comision-text {
+  grid-row: span 2/span 2;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index-main .comision-container .comision-text p {
+  font-size: 20px;
+}
+.index-main .about-index {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 8px;
+  margin: auto;
+  color: white;
+  margin-top: 150px;
+}
+.index-main .about-index .about-ix-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+.index-main .about-index .about-ix-text {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 150px;
+}
+.index-main .about-index .about-ix-text p {
+  font-size: 20px;
+}
+.index-main .about-index .about-ix-img {
+  grid-row: span 2/span 2;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index-main .about-index .about-ix-img img {
+  width: 500px;
+  height: 350px;
+}
+
+.portfolio-main .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+.portfolio-main .gallery .gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-main .gallery .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.portfolio-main .gallery .gallery-item:hover .overlay {
+  opacity: 1;
+}
+.portfolio-main .gallery .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-sizing: border-box;
+}
+.portfolio-main .gallery .overlay .text {
+  text-align: center;
+  padding: 10px;
+}
+
+.comision-main .formulario-comision {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(13, 1fr);
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  border: solid white;
+}
+.comision-main .formulario-comision .com-desc-title {
+  grid-column: span 2/span 2;
+}
+.comision-main .formulario-comision .com-txt-area {
+  grid-column: span 2/span 2;
+  grid-row-start: 4;
+}
+.comision-main .formulario-comision .com-deseado {
+  grid-column: span 2/span 2;
+  grid-row-start: 5;
+}
+.comision-main .formulario-comision .psd-label {
+  grid-row-start: 6;
+}
+.comision-main .formulario-comision .publ-label {
+  grid-row-start: 6;
+}
+.comision-main .formulario-comision .pers-label {
+  grid-row-start: 7;
+}
+.comision-main .formulario-comision .ref-label {
+  grid-column: span 2/span 2;
+}
+.comision-main .formulario-comision .subida-label {
+  grid-column: span 2/span 2;
+  grid-row-start: 9;
+}
+.comision-main .formulario-comision .com-cancelar {
+  grid-row-start: 10;
+}
+.comision-main .formulario-comision .com-enviar {
+  grid-row-start: 10;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 150px;
+}
+.footer h3 {
+  margin-bottom: 10px;
+}
+.footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.footer .footer a:hover {
+  text-decoration: underline;
+}
+.footer .footer .icon {
+  display: inline-block;
+  margin-top: 10px;
+}
+.footer .icon i {
+  font-size: 20px;
+}
+
+@media (max-width: 1400px) {
+  body {
     overflow-x: hidden;
+  }
+  .carousel-image {
+    max-width: 200px;
+  }
+  .comision-text p {
+    margin-right: 5vh;
+  }
+  .about-ix-text p {
+    margin-left: 5vh;
+  }
+  .about-ix-img img {
+    max-width: 400px;
+    height: 250px;
+  }
 }
-
-/* Menu de navegacion */
-.menu {
-    display: grid;
-    grid-template-columns: 150px auto;
-    align-items: center;
-    position: relative;
+@media (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+  .carousel-image {
+    max-width: 150px;
+  }
+  .about-ix-img img {
+    max-width: 300px;
+    height: 200px;
+  }
 }
-
-.logo a {
-    color: white;
-    text-decoration: none;
-    font-size: 30px;
-    font-weight: bold;
-    margin-left: 15px;
+@media (min-width: 769px) {
+  .close {
+    display: none; /* Oculta el botón de cierre en pantallas mayores a 768px */
+  }
 }
-
-.menu-links {
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-}
-
-.menu-links ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-}
-
-.menu-links ul li {
-    display: inline;
-}
-
-.menu-links ul a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    padding-right: 8px;
-}
-
-/* Estilos para el botón hamburguesa (oculto por defecto en escritorio) */
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 15px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 40px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1001; /* Asegúrate de que esté por encima del menú */
-}
-
-/* ---------------------------- INDEX ------------------------------------ */
-/* Portada */
-.portada {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
-    place-items: center;
-}
-
-.img-port {
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-}
-
-.title-port {
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-    grid-column-start: 4;
-    text-align: center;
-}
-
-.title-port h1 {
-    font-size: 50px;
-}
-.title-port p{
-    font-size: 25px;
-    margin-top: 15px;
-}
-
-/* Carrusel */
-.carousel-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-top: 150px;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.6s ease-in-out;
-}
-
-.carousel-image {
-    width: 250px;
-    /* Ajusta el ancho al contenedor */
-    height: auto;
-    /* Mantiene la proporción de la imagen */
-    max-height: 100vh;
-    /* Limita la altura máxima */
-    object-fit: cover;
-    /* Cubre el área sin deformar */
-}
-
-/* Boton Ver más */
-.boton-portfolio {
-    display: flex;
-    justify-content: center;
-}
-
-.boton-portfolio button {
-    background-color: transparent;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.boton-portfolio button:hover {
-    background-color: #8B0A0A;
-}
-
-.boton-portfolio a {
-    color: white;
-    text-decoration: none;
-    font-size: 25px;
-}
-
-/* Apartado de comisiones */
-.comision-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
-    color: white;
-    margin: auto;
-    margin-top: 150px;
-}
-
-.comision-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.comision-title h2 {
-    font-size: 40px;
-}
-
-.comision-button {
-    grid-column-start: 1;
-    grid-row-start: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.comision-button button {
-    background-color: transparent;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.comision-button button:hover {
-    background-color: #8B0A0A;
-}
-
-.comision-button a {
-    color: white;
-    text-decoration: none;
-    font-size: 25px;
-}
-
-.comision-text {
-    grid-row: span 2 / span 2;
-    grid-column-start: 2;
-    grid-row-start: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.comision-text p {
-    font-size: 20px;
-}
-
-/* Apartado sobre mi index */
-.about-index {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
-    margin: auto;
-    color: white;
-    margin-top: 150px;
-}
-
-.about-ix-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-}
-
-.about-ix-text {
-    grid-column-start: 1;
-    grid-row-start: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 150px;
-}
-
-.about-ix-text p {
-    font-size: 20px;
-}
-
-.about-ix-img {
-    grid-row: span 2 / span 2;
-    grid-column-start: 2;
-    grid-row-start: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.about-ix-img img {
-    width: 500px;
-    height: 350px;
-}
- /*-----------------------------------------------------------------------------------------------*/
-
- /*--------------------------------------------- PORTAFOLIO ------------------------------------*/
-
- .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-    padding: 10px;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.gallery-item:hover .overlay {
-    opacity: 1;
-}
-
-.overlay {
-    position: absolute;
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .menu-links {
+    display: none; /* Oculta el menú en dispositivos móviles por defecto */
+    position: fixed; /* Fija el menú en la pantalla */
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    transform: translateY(-100%); /* Oculta el menú fuera de la vista */
+  }
+  .menu-links.active {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    box-sizing: border-box;
-}
-
-.text {
+    transform: translateY(0);
+  }
+  .hamburger {
+    display: block; /* Muestra el botón hamburguesa en dispositivos móviles */
+  }
+  .menu-links ul {
+    flex-direction: column;
     text-align: center;
-    padding: 10px;
-}
-
-  /*------------------------------------------------------------------------------------------------*/
-
-  /*----------------------------------------------- COMISIONES -----------------------------------*/
-.formulario-comision {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(13, 1fr);
-    gap: 8px;
+  }
+  .menu-links ul a {
+    padding: 15px 0;
+    font-size: 24px;
+  }
+  .carousel-image {
+    width: 200px;
+  }
+  .about-ix-img img {
+    max-width: 150px;
+    height: 100px;
+  }
+  .comision-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .comision-title {
+    order: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .comision-text {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+  .comision-text p {
+    margin-left: 5vh;
+  }
+  .comision-button {
+    order: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .comision-button button {
+    border-radius: 5px;
     border: solid white;
-}
-
-.com-desc-title {
-    grid-column: span 2 / span 2;
-}
-
-.com-txt-area {
-    grid-column: span 2 / span 2;
-    grid-row-start: 4;
-}
-
-.com-deseado {
-    grid-column: span 2 / span 2;
-    grid-row-start: 5;
-}
-
-.psd-label {
-    grid-row-start: 6;
-}
-
-.publ-label {
-    grid-row-start: 6;
-}
-
-.pers-label {
-    grid-row-start: 7;
-}
-
-.ref-label {
-    grid-column: span 2 / span 2;
-}
-
-.subida-label {
-    grid-column: span 2 / span 2;
-    grid-row-start: 9;
-}
-
-.com-cancelar {
-    grid-row-start: 10;
-}
-
-.com-enviar {
-    grid-row-start: 10;
-}
-  /*----------------------------------------------------------------------------------------------*/
-/*------------------------------------------------- Footer ---------------------------------------*/
-.footer {
-    background-color: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 150px;
-}
-
-.footer h3 {
-    margin-bottom: 10px;
-}
-
-.footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-/* Estilos para los iconos */
-.footer .icon {
-    display: inline-block;
+  }
+  .boton-portfolio button {
+    border: solid white;
+    border-radius: 5px;
     margin-top: 10px;
+  }
+  .about-index {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .about-ix-title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .about-ix-text {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .about-ix-text p {
+    margin-left: 5vh;
+    margin-right: 5vh;
+  }
+  .about-ix-img {
+    display: none;
+  }
+  .footer .icon {
+    margin-top: 10px;
+  }
+  /* PORTAFOLIO */
+  .gallery {
+    margin-top: 20px;
+  }
 }
-
-.icon i {
-    font-size: 20px;
-}
-
-/*---------------------------------------Media Queries -----------------------------------------------*/
-@media (max-width: 1400px) {
-    body {
-        overflow-x: hidden;
-    }
-
-    .carousel-image {
-        max-width: 200px;
-    }
-
-    .comision-text p {
-        margin-right: 5vh;
-    }
-
-    .about-ix-text p {
-        margin-left: 5vh;
-    }
-
-    .about-ix-img img {
-        max-width: 400px;
-        height: 250px;
-    }
-}
-
-@media (max-width: 1024px) {
-    body {
-        overflow-x: hidden;
-    }
-
-    .carousel-image {
-        max-width: 150px;
-    }
-
-    .about-ix-img img {
-        max-width: 300px;
-        height: 200px;
-    }
-}
-
-@media (min-width: 769px) {
-    .close {
-        display: none; /* Oculta el botón de cierre en pantallas mayores a 768px */
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-    }
-
-    .menu-links {
-        display: none; /* Oculta el menú en dispositivos móviles por defecto */
-        position: fixed; /* Fija el menú en la pantalla */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        flex-direction: column; 
-        transition: transform 0.3s ease;
-        transform: translateY(-100%); /* Oculta el menú fuera de la vista */
-    }
-
-    .menu-links.active {
-        display: flex;
-        transform: translateY(0);
-    }
-
-    .hamburger {
-        display: block; /* Muestra el botón hamburguesa en dispositivos móviles */
-    }
-
-    .menu-links ul {
-        flex-direction: column; 
-        text-align: center; 
-    }
-
-    .menu-links ul a {
-        padding: 15px 0; 
-        font-size: 24px;
-    }
-
-    .carousel-image {
-        width: 200px;
-    }
-
-    .about-ix-img img {
-        max-width: 150px;
-        height: 100px;
-    }
-
-    .comision-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-    }
-    .comision-title {
-        order: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .comision-text {
-        order: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 0;
-    }
-    .comision-text p {
-        margin-left: 5vh;
-    }
-
-    .comision-button {
-        order: 3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .comision-button button {
-        border-radius: 5px;
-        border: solid white;
-    }
-
-    .boton-portfolio button {
-        border: solid white;
-        border-radius: 5px;
-        margin-top: 10px;
-    }
-
-    .about-index {
-        grid-template-columns: 1fr; 
-        grid-template-rows: auto auto; 
-    }
-
-    .about-ix-title {
-        grid-column: 1; 
-        grid-row: 1; 
-    }
-
-    .about-ix-text {
-        grid-column: 1;
-        grid-row: 2; 
-    }
-    .about-ix-text p {
-        margin-left: 5vh;
-        margin-right: 5vh;
-    }
-
-    .about-ix-img {
-        display: none; 
-    }
-
-    .footer .icon {
-        margin-top: 10px;
-    }
-
-    /* PORTAFOLIO */
-    .gallery {
-        margin-top: 20px;
-    }
-}
-
 @media (max-width: 320px) {
-    body {
-        overflow-x: hidden;
-    }
+  body {
+    overflow-x: hidden;
+  }
+  .carousel-image {
+    width: 150px;
+  }
+  .about-ix-img img {
+    max-width: 150px;
+    height: 100px;
+  }
+  .comision-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .comision-title {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .comision-text {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+  .comision-button {
+    order: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
-    .carousel-image {
-        width: 150px;
-    }
-
-    .about-ix-img img {
-        max-width: 150px;
-        height: 100px;
-    }
-
-    .comision-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        }
-        .comision-title {
-            order: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .comision-text {
-            order: 2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 10px 0;
-        }
-
-        .comision-button {
-            order: 3;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
+/*# sourceMappingURL=style.css.map */

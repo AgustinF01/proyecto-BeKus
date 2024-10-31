@@ -1,0 +1,20 @@
+body {
+  color: whitesmoke;
+  background: linear-gradient(to bottom, #8B0A0A, #000000);
+}
+
+header nav {
+  display: grid;
+  grid-template-columns: 150px auto;
+  align-items: center;
+  position: relative;
+}
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+/*# sourceMappingURL=syle.css.map */
