@@ -1,3 +1,19 @@
+@mixin pl-texto {
+    color: #f1e9e5;
+}
+@mixin pl-background {
+    background: #0c0806;
+}
+@mixin pl-primaria {
+    background: #d12323; //(generalmente para botones)
+}
+@mixin pl-secundaria {
+    background: #812e2e; //(para botones secundarios o inactivos y combinacion de backgrounds aparte del principal)
+}
+@mixin pl-acento {
+    background: #c54040; //(generalmente para elementos o backgrounds apartes del principal)
+}    
+
 * {
     margin: 0;
     padding: 0;
@@ -11,20 +27,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: black;
+    background-color: rgb(71, 71, 71);
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: linear-gradient(to bottom, #8B0A0A, #000000);
+    @include pl-background;
     border-radius: 5px;
 }
 
 body {
     color: whitesmoke;
-    background: linear-gradient(to bottom, #8B0A0A, #000000);
-    background-attachment: fixed;
-    background-size: cover;
+    @include pl-background;
     overflow-x: hidden;
 }
 
@@ -94,28 +108,85 @@ header {
 
 .index-main {
     .portada {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 8px;
-        place-items: center;
-    }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
 
-    .img-port {
-        grid-column: span 2 / span 2;
-        grid-row: span 2 / span 2;
-    }
-
-    .title-port {
-        grid-column: span 2 / span 2;
-        grid-row: span 2 / span 2;
-        grid-column-start: 4;
-        text-align: center;
-    }
-
-    .title-port p{
-        font-size: 25px;
-        margin-top: 15px;
+        .image-container {
+            position: relative;
+            z-index: 1; 
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s;
+    
+            img {
+                max-width: 100%; /* Asegura que la imagen sea responsiva */
+                height: auto;
+                mask-image: linear-gradient(black, transparent);
+            }
+    
+            div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 5em; /* Tamaño de la fuente */
+                color: rgba(255, 255, 255, 0.7); /* Color del texto */
+                text-align: center;
+                z-index: 0; /* Asegura que el texto esté detrás de la imagen */
+                opacity: 0;
+                animation: fadeInText 1s forwards;
+                animation-delay: 1.5s; /* Retraso para que aparezca después de la imagen */
+    
+                .part1 {
+                    transform: translateX(-100%); /* Comienza fuera de la pantalla a la izquierda */
+                    animation: slideInLeft 1s forwards; /* Animación de entrada desde la izquierda */
+                    animation-delay: 1s; /* Retraso para el texto */
+                }
+                
+                .part2 {
+                    transform: translateX(100%); /* Comienza fuera de la pantalla a la derecha */
+                    animation: slideInRight 1s forwards; /* Animación de entrada desde la derecha */
+                    animation-delay: 1s; /* Retraso para el texto */
+                }
+                
+                span {
+                    display: inline-block; /* Permite que se parta en dos */
+                }
+            }
+    
+            @keyframes fadeIn {
+                to {
+                    opacity: 1; /* Finaliza completamente visible */
+                }
+            }
+            
+            @keyframes fadeInText {
+                to {
+                    opacity: 1; /* Hace que el texto sea visible */
+                }
+            }
+            
+            @keyframes slideInLeft {
+                0% {
+                    transform: translate(-150%, -50%); /* Comienza fuera de la pantalla a la izquierda */
+                }
+                100% {
+                    transform: translate(-80%, -50%); /* Termina en el centro */
+                }
+            }
+            
+            @keyframes slideInRight {
+                0% {
+                    transform: translate(150%, -50%); /* Comienza fuera de la pantalla a la derecha */
+                }
+                100% {
+                    transform: translate(80%, -50%); /* Termina en el centro */
+                }
+            }
+            
+        }
     }
 
     // CARRUSEL
@@ -154,10 +225,11 @@ header {
         padding: 10px 20px;
         cursor: pointer;
         transition: background-color 0.3s;
+        @include pl-secundaria;
     }
     
     .boton-portfolio button:hover {
-        background-color: #8B0A0A;
+        @include pl-primaria;
     }
     
     .boton-portfolio a {
@@ -175,6 +247,9 @@ header {
         color: white;
         margin: auto;
         margin-top: 150px;
+        @include pl-secundaria;
+        width: 95%;
+        height: 250px;
 
         .comision-title {
             display: flex;
@@ -195,7 +270,7 @@ header {
         }
         
         .comision-button button {
-            background-color: transparent;
+            @include pl-acento;
             border: none;
             border-radius: 10px;
             padding: 10px 20px;
@@ -204,7 +279,7 @@ header {
         }
         
         .comision-button button:hover {
-            background-color: #8B0A0A;
+            @include pl-primaria;
         }
         
         .comision-button a {
@@ -236,6 +311,9 @@ header {
         margin: auto;
         color: white;
         margin-top: 150px;
+        @include pl-secundaria;
+        width: 95%;
+        height: 350px;
 
         .about-ix-title {
             display: flex;

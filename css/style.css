@@ -12,20 +12,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: black;
+  background-color: rgb(71, 71, 71);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: linear-gradient(to bottom, #8B0A0A, #000000);
+  background: #0c0806;
   border-radius: 5px;
 }
 
 body {
   color: whitesmoke;
-  background: linear-gradient(to bottom, #8B0A0A, #000000);
-  background-attachment: fixed;
-  background-size: cover;
+  background: #0c0806;
   overflow-x: hidden;
 }
 
@@ -85,25 +83,74 @@ header nav .menu-links ul a {
 }
 
 .index-main .portada {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 8px;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-.index-main .img-port {
-  grid-column: span 2/span 2;
-  grid-row: span 2/span 2;
+.index-main .portada .image-container {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.5s;
 }
-.index-main .title-port {
-  grid-column: span 2/span 2;
-  grid-row: span 2/span 2;
-  grid-column-start: 4;
+.index-main .portada .image-container img {
+  max-width: 100%; /* Asegura que la imagen sea responsiva */
+  height: auto;
+  mask-image: linear-gradient(black, transparent);
+}
+.index-main .portada .image-container div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5em; /* Tamaño de la fuente */
+  color: rgba(255, 255, 255, 0.7); /* Color del texto */
   text-align: center;
+  z-index: 0; /* Asegura que el texto esté detrás de la imagen */
+  opacity: 0;
+  animation: fadeInText 1s forwards;
+  animation-delay: 1.5s; /* Retraso para que aparezca después de la imagen */
 }
-.index-main .title-port p {
-  font-size: 25px;
-  margin-top: 15px;
+.index-main .portada .image-container div .part1 {
+  transform: translateX(-100%); /* Comienza fuera de la pantalla a la izquierda */
+  animation: slideInLeft 1s forwards; /* Animación de entrada desde la izquierda */
+  animation-delay: 1s; /* Retraso para el texto */
+}
+.index-main .portada .image-container div .part2 {
+  transform: translateX(100%); /* Comienza fuera de la pantalla a la derecha */
+  animation: slideInRight 1s forwards; /* Animación de entrada desde la derecha */
+  animation-delay: 1s; /* Retraso para el texto */
+}
+.index-main .portada .image-container div span {
+  display: inline-block; /* Permite que se parta en dos */
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Finaliza completamente visible */
+  }
+}
+@keyframes fadeInText {
+  to {
+    opacity: 1; /* Hace que el texto sea visible */
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translate(-150%, -50%); /* Comienza fuera de la pantalla a la izquierda */
+  }
+  100% {
+    transform: translate(-80%, -50%); /* Termina en el centro */
+  }
+}
+@keyframes slideInRight {
+  0% {
+    transform: translate(150%, -50%); /* Comienza fuera de la pantalla a la derecha */
+  }
+  100% {
+    transform: translate(80%, -50%); /* Termina en el centro */
+  }
 }
 .index-main .carousel-container {
   width: 100%;
@@ -136,9 +183,10 @@ header nav .menu-links ul a {
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
+  background: #812e2e;
 }
 .index-main .boton-portfolio button:hover {
-  background-color: #8B0A0A;
+  background: #d12323;
 }
 .index-main .boton-portfolio a {
   color: white;
@@ -153,6 +201,9 @@ header nav .menu-links ul a {
   color: white;
   margin: auto;
   margin-top: 150px;
+  background: #812e2e;
+  width: 95%;
+  height: 250px;
 }
 .index-main .comision-container .comision-title {
   display: flex;
@@ -170,7 +221,7 @@ header nav .menu-links ul a {
   align-items: center;
 }
 .index-main .comision-container .comision-button button {
-  background-color: transparent;
+  background: #c54040;
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
@@ -178,7 +229,7 @@ header nav .menu-links ul a {
   transition: background-color 0.3s;
 }
 .index-main .comision-container .comision-button button:hover {
-  background-color: #8B0A0A;
+  background: #d12323;
 }
 .index-main .comision-container .comision-button a {
   color: white;
@@ -204,6 +255,9 @@ header nav .menu-links ul a {
   margin: auto;
   color: white;
   margin-top: 150px;
+  background: #812e2e;
+  width: 95%;
+  height: 350px;
 }
 .index-main .about-index .about-ix-title {
   display: flex;
