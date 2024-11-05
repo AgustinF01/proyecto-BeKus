@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <!-- ---------------- -->
     <title>BeKus - Artist</title>
@@ -18,7 +18,7 @@
 <body>
     <!-- Menu de navegacion -->
     <header>
-        <nav class="menu">
+        <nav class="menu" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500">
             <div class="logo">
                 <a href="index.html">BeKus</a>
             </div>
@@ -54,41 +54,35 @@
         <!-- Carousel -->
         <section class="galeria">
             <div class="carousel-container">
-                <div class="carousel-track">
-                    <img src="./img/slider-1.jpg" alt="Imagen 1" class="carousel-image">
-                    <img src="./img/slider-2.jpg" alt="Imagen 2" class="carousel-image">
-                    <img src="./img/slider-3.jpg" alt="Imagen 3" class="carousel-image">
-                    <img src="./img/slider-4.jpg" alt="Imagen 4" class="carousel-image">
-                    <img src="./img/slider-5.jpg" alt="Imagen 5" class="carousel-image">
-            
-                    <!-- Duplicado para carrusel infinito -->
-                    <img src="./img/slider-1.jpg" alt="Imagen 1" class="carousel-image">
-                    <img src="./img/slider-2.jpg" alt="Imagen 2" class="carousel-image">
-                    <img src="./img/slider-3.jpg" alt="Imagen 3" class="carousel-image">
-                    <img src="./img/slider-4.jpg" alt="Imagen 4" class="carousel-image">
-                    <img src="./img/slider-5.jpg" alt="Imagen 5" class="carousel-image">
-                </div>
+                <div style="--img: url(../img/slider-1.jpg);" class="box box-1"></div>
+                <div style="--img: url(../img/slider-2.jpg);" class="box box-2"></div>
+                <div style="--img: url(../img/slider-3.jpg);" class="box box-3"></div>
+                <div style="--img: url(../img/slider-4.jpg);" class="box box-4"></div>
+                <div style="--img: url(../img/slider-5.jpg);" class="box box-5"></div>
+                <div style="--img: url(../img/slider-6.jpg);" class="box box-6"></div>
+                <div style="--img: url(../img/slider-7.jpg);" class="box box-7"></div>
+                <div style="--img: url(../img/slider-8.jpg);" class="box box-8"></div>
             </div>
         
-            <div class="boton-portfolio">
+            <div class="boton-portfolio" data-aos="fade-up" data-aos-duration="500">
                 <button><a href="./pages/portfolio.html">Ver más</a></button>
             </div>
         </section>
 
         <!-- Apartado de comisiones -->
         <section>
-            <div class="comision-container">
-                <div class="comision-title">
+            <div class="comision-container" data-aos="fade-right" data-aos-duration="1000">
+                <div class="comision-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                     <h2>¡Comisiones Abiertas!</h2>
                 </div>
 
-                <div class="comision-button">
+                <div class="comision-button" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
                     <button>
-                        <a href="pages/commissions.html">HAZ TU PEDIDO</a>
+                        <a href="pages/commissions.html">HAZ TU PEDIDO AQUI</a>
                     </button>
                 </div>
 
-                <div class="comision-text">
+                <div class="comision-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, molestiae? Quibusdam delectus
                         eligendi rem quae. Quae eligendi vero ipsum, quibusdam aspernatur repellat quam laudantium?
                         Quibusdam, ad. Magnam eius quaerat quas?</p>
@@ -98,19 +92,19 @@
 
         <!-- Apartado sobre mi -->
         <section>
-            <div class="about-index">
-                <div class="about-ix-title">
+            <div class="about-index" data-aos="fade-right" data-aos-duration="1000">
+                <div class="about-ix-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                     <h2>Sobre mi</h2>
                 </div>
 
-                <div class="about-ix-text">
+                <div class="about-ix-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores enim quibusdam suscipit officia
                         unde
                         nam voluptatibus veritatis sed! Quas nihil blanditiis beatae voluptas praesentium itaque velit
                         optio in,
                         nesciunt nobis?</p>
                 </div>
-                <div class="about-ix-img">
+                <div class="about-ix-img" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <img src="./img/about-index.jpg" alt="">
                 </div>
             </div>
@@ -126,7 +120,10 @@
         <a href="#" class="icon"><i class="fab fa-patreon"></i></a>
     </footer>
     <script src="./js/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="https://kit.fontawesome.com/ffa1f2b655.js" crossorigin="anonymous"></script>
 </body>
 

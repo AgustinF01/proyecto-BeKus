@@ -76,10 +76,29 @@ header nav .menu-links ul li {
   display: inline;
 }
 header nav .menu-links ul a {
+  position: relative;
+  cursor: pointer;
   color: white;
   text-decoration: none;
   font-size: 20px;
-  padding-right: 8px;
+  padding: 0.5rem 1rem;
+  transition: color 0.25s;
+}
+header nav .menu-links ul a::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: white;
+  scale: 1 0;
+  z-index: -1;
+  transition: 0.45s;
+  border-radius: 10px;
+}
+header nav .menu-links ul a:hover {
+  color: black;
+}
+header nav .menu-links ul a:hover:after {
+  scale: 1 1;
 }
 
 .index-main .portada {
@@ -153,24 +172,59 @@ header nav .menu-links ul a {
   }
 }
 .index-main .carousel-container {
-  width: 100%;
-  overflow: hidden;
   position: relative;
-  margin-top: 150px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 15px;
+  width: 80%;
+  height: 375px;
+  transition: all 400ms;
+  margin-left: 10%;
 }
-.index-main .carousel-container .carousel-track {
+.index-main .carousel-container:hover .box {
+  filter: grayscale(100%) opacity(24%);
+}
+.index-main .box {
+  position: relative;
+  background: var(--img) center center;
+  background-size: cover;
+  transition: all 400ms;
   display: flex;
-  transition: transform 0.6s ease-in-out;
+  justify-content: center;
+  align-items: center;
 }
-.index-main .carousel-container .carousel-track .carousel-image {
-  width: 250px;
-  /* Ajusta el ancho al contenedor */
-  height: auto;
-  /* Mantiene la proporción de la imagen */
-  max-height: 100vh;
-  /* Limita la altura máxima */
-  object-fit: cover;
-  /* Cubre el área sin deformar */
+.index-main .carousel-container .box:hover {
+  filter: grayscale(0%) opacity(100%);
+}
+.index-main .carousel-container:has(.box-1:hover) {
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.index-main .carousel-container:has(.box-2:hover) {
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.index-main .carousel-container:has(.box-3:hover) {
+  grid-template-columns: 1fr 1fr 3fr 1fr 1fr 1fr 1fr 1fr;
+}
+.index-main .carousel-container:has(.box-4:hover) {
+  grid-template-columns: 1fr 1fr 1fr 3fr 1fr 1fr 1fr 1fr;
+}
+.index-main .carousel-container:has(.box-5:hover) {
+  grid-template-columns: 1fr 1fr 1fr 1fr 3fr 1fr 1fr 1fr;
+}
+.index-main .carousel-container:has(.box-6:hover) {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 3fr 1fr 1fr;
+}
+.index-main .carousel-container:has(.box-7:hover) {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 3fr 1fr;
+}
+.index-main .carousel-container:has(.box-8:hover) {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 3fr;
+}
+.index-main .box:nth-child(odd) {
+  transform: translateY(-16px);
+}
+.index-main .box:nth-child(even) {
+  transform: translateY(16px);
 }
 .index-main .boton-portfolio {
   display: flex;
@@ -178,15 +232,16 @@ header nav .menu-links ul a {
 }
 .index-main .boton-portfolio button {
   background-color: transparent;
-  border: none;
+  border: solid rgba(255, 255, 255, 0.7);
   border-radius: 10px;
+  margin-top: 30px;
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
-  background: #812e2e;
 }
 .index-main .boton-portfolio button:hover {
   background: #d12323;
+  border: none;
 }
 .index-main .boton-portfolio a {
   color: white;
@@ -204,6 +259,8 @@ header nav .menu-links ul a {
   background: #812e2e;
   width: 95%;
   height: 250px;
+  background-image: url(../img/bg-1.jpeg);
+  background-size: cover;
 }
 .index-main .comision-container .comision-title {
   display: flex;
@@ -222,14 +279,15 @@ header nav .menu-links ul a {
 }
 .index-main .comision-container .comision-button button {
   background: #c54040;
-  border: none;
+  border: solid whitesmoke;
   border-radius: 10px;
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 .index-main .comision-container .comision-button button:hover {
-  background: #d12323;
+  background: #0c0806;
+  border: none;
 }
 .index-main .comision-container .comision-button a {
   color: white;
@@ -255,7 +313,6 @@ header nav .menu-links ul a {
   margin: auto;
   color: white;
   margin-top: 150px;
-  background: #812e2e;
   width: 95%;
   height: 350px;
 }
@@ -285,8 +342,9 @@ header nav .menu-links ul a {
   align-items: center;
 }
 .index-main .about-index .about-ix-img img {
-  width: 500px;
-  height: 350px;
+  width: 550px;
+  height: 375px;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
 .portfolio-main .gallery {
