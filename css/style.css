@@ -118,6 +118,7 @@ header nav .menu-links ul a:hover:after {
   max-width: 100%; /* Asegura que la imagen sea responsiva */
   height: auto;
   mask-image: linear-gradient(black, transparent);
+  filter: drop-shadow(25px 5px 3px black);
 }
 .index-main .portada .image-container div {
   position: absolute;
@@ -347,6 +348,13 @@ header nav .menu-links ul a:hover:after {
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 
+.portfolio-main h1 {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 20px 0;
+}
 .portfolio-main .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -385,52 +393,112 @@ header nav .menu-links ul a:hover:after {
   text-align: center;
   padding: 10px;
 }
-
-.comision-main .formulario-comision {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(13, 1fr);
-  gap: 8px;
+.portfolio-main .comision-button {
+  display: flex;
   justify-content: center;
+}
+.portfolio-main .comision-button button {
+  background-color: transparent;
+  border: solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  margin-top: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.portfolio-main .comision-button button a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+.portfolio-main .comision-button button:hover {
+  background: #d12323;
+  border: none;
+}
+
+.comision-main h3 {
+  text-align: center;
+}
+.comision-main .form-container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.comision-main .form-container .formulario-comision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  color: #000000;
+}
+.comision-main .form-container .formulario-comision .com-nombre,
+.comision-main .form-container .formulario-comision .com-apellido,
+.comision-main .form-container .formulario-comision .com-email,
+.comision-main .form-container .formulario-comision .com-telefono,
+.comision-main .form-container .formulario-comision .com-desc-title,
+.comision-main .form-container .formulario-comision .com-txt-area,
+.comision-main .form-container .formulario-comision .com-deseado,
+.comision-main .form-container .formulario-comision .ref-label,
+.comision-main .form-container .formulario-comision .subida-label {
+  grid-column: span 2;
+}
+.comision-main .form-container .formulario-comision input[type=text],
+.comision-main .form-container .formulario-comision input[type=email],
+.comision-main .form-container .formulario-comision input[type=file],
+.comision-main .form-container .formulario-comision textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.comision-main .form-container .formulario-comision textarea {
+  resize: vertical; /* Permitir que el usuario cambie el tamaño verticalmente */
+}
+.comision-main .form-container .formulario-comision .com-deseado {
+  display: flex;
+  flex-direction: column;
+}
+.comision-main .form-container .formulario-comision .psd-label,
+.comision-main .form-container .formulario-comision .publ-label,
+.comision-main .form-container .formulario-comision .res-label,
+.comision-main .form-container .formulario-comision .pers-label {
+  display: flex;
   align-items: center;
-  border: solid white;
 }
-.comision-main .formulario-comision .com-desc-title {
-  grid-column: span 2/span 2;
+.comision-main .form-container .formulario-comision label {
+  margin-right: 10px;
 }
-.comision-main .formulario-comision .com-txt-area {
-  grid-column: span 2/span 2;
-  grid-row-start: 4;
+.comision-main .form-container .formulario-comision .com-cancelar,
+.comision-main .form-container .formulario-comision .com-enviar {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
-.comision-main .formulario-comision .com-deseado {
-  grid-column: span 2/span 2;
-  grid-row-start: 5;
+.comision-main .form-container .formulario-comision button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
 }
-.comision-main .formulario-comision .psd-label {
-  grid-row-start: 6;
+.comision-main .form-container .formulario-comision button[type=reset] {
+  background-color: #dc3545; /* Color para el botón de cancelar */
 }
-.comision-main .formulario-comision .publ-label {
-  grid-row-start: 6;
+.comision-main .form-container .formulario-comision button:hover {
+  background-color: #0056b3;
 }
-.comision-main .formulario-comision .pers-label {
-  grid-row-start: 7;
-}
-.comision-main .formulario-comision .ref-label {
-  grid-column: span 2/span 2;
-}
-.comision-main .formulario-comision .subida-label {
-  grid-column: span 2/span 2;
-  grid-row-start: 9;
-}
-.comision-main .formulario-comision .com-cancelar {
-  grid-row-start: 10;
-}
-.comision-main .formulario-comision .com-enviar {
-  grid-row-start: 10;
+.comision-main .form-container .formulario-comision button[type=reset]:hover {
+  background-color: #c82333;
 }
 
 .footer {
-  background-color: black;
+  background-color: #000000;
   color: white;
   padding: 20px;
   text-align: center;
@@ -439,20 +507,25 @@ header nav .menu-links ul a:hover:after {
 .footer h3 {
   margin-bottom: 10px;
 }
-.footer a {
-  color: white;
+.footer p {
+  margin-bottom: 10px;
+}
+.footer ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.footer ul li {
+  list-style: none;
+}
+.footer ul li a {
+  display: flex;
   text-decoration: none;
-  margin: 0 10px;
 }
-.footer .footer a:hover {
-  text-decoration: underline;
-}
-.footer .footer .icon {
-  display: inline-block;
-  margin-top: 10px;
-}
-.footer .icon i {
-  font-size: 20px;
+.footer ul li a i {
+  color: white;
+  font-size: 30px;
 }
 
 @media (max-width: 1400px) {

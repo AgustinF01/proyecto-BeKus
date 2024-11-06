@@ -147,6 +147,7 @@ header {
                 max-width: 100%; /* Asegura que la imagen sea responsiva */
                 height: auto;
                 mask-image: linear-gradient(black, transparent);
+                filter: drop-shadow(25px 5px 3px black);
             }
     
             div {
@@ -429,6 +430,13 @@ header {
 
 // PAGINA PORTFOLIO
 .portfolio-main {
+    h1 {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0 20px 0;
+    }
     .gallery {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -472,67 +480,137 @@ header {
             }
         }
     }
+    .comision-button {
+        display: flex;
+        justify-content: center;
+
+        button {
+            background-color: transparent;
+            border: solid rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            margin-top: 30px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            // @include pl-secundaria;
+
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 25px;
+            }
+        }
+        button:hover {
+            @include pl-primaria;
+            border: none;
+        }
+    }
+    
+    
+    
+    
 }
 
 // PAGINA COMISION
 .comision-main {
-    .formulario-comision {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(13, 1fr);
-        gap: 8px;
-        justify-content: center;
-        align-items: center;
-        border: solid white;
+    h3 {
+        text-align: center;
+    }
 
-        .com-desc-title {
-            grid-column: span 2 / span 2;
+    .form-container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+        .formulario-comision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            color: #000000;
+
+            .com-nombre,
+            .com-apellido,
+            .com-email,
+            .com-telefono,
+            .com-desc-title,
+            .com-txt-area,
+            .com-deseado,
+            .ref-label,
+            .subida-label {
+                grid-column: span 2;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="file"],
+            textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            textarea {
+                resize: vertical; /* Permitir que el usuario cambie el tamaño verticalmente */
+            }
+            
+            .com-deseado {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .psd-label,
+            .publ-label,
+            .res-label,
+            .pers-label {
+                display: flex;
+                align-items: center;
+            }
+
+            label {
+                margin-right: 10px;
+            }
+            
+            .com-cancelar,
+            .com-enviar {
+                grid-column: span 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            button {
+                padding: 10px 15px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                background-color: #007bff;
+                color: white;
+                transition: background-color 0.3s;
+            }
+
+            button[type="reset"] {
+                background-color: #dc3545; /* Color para el botón de cancelar */
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+            button[type="reset"]:hover {
+                background-color: #c82333;
+            }
         }
-        
-        .com-txt-area {
-            grid-column: span 2 / span 2;
-            grid-row-start: 4;
-        }
-        
-        .com-deseado {
-            grid-column: span 2 / span 2;
-            grid-row-start: 5;
-        }
-        
-        .psd-label {
-            grid-row-start: 6;
-        }
-        
-        .publ-label {
-            grid-row-start: 6;
-        }
-        
-        .pers-label {
-            grid-row-start: 7;
-        }
-        
-        .ref-label {
-            grid-column: span 2 / span 2;
-        }
-        
-        .subida-label {
-            grid-column: span 2 / span 2;
-            grid-row-start: 9;
-        }
-        
-        .com-cancelar {
-            grid-row-start: 10;
-        }
-        
-        .com-enviar {
-            grid-row-start: 10;
-        }
+
     }
 }
-
 // FOOTER
 .footer {
-    background-color: black;
+    background-color: #000000;
     color: white;
     padding: 20px;
     text-align: center;
@@ -542,23 +620,29 @@ header {
         margin-bottom: 10px;
     }
 
-    a {
-        color: white;
-        text-decoration: none;
-        margin: 0 10px;
+    p {
+        margin-bottom: 10px;
     }
 
-    .footer a:hover {
-        text-decoration: underline;
-    }
+    ul {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
 
-    .footer .icon {
-        display: inline-block;
-        margin-top: 10px;
-    }
-    
-    .icon i {
-        font-size: 20px;
+        li {
+            list-style: none;
+
+            a{
+                display: flex;
+                text-decoration: none;
+
+                i {
+                    color: white;
+                    font-size: 30px;
+                }
+            }
+        }
     }
     
 }
