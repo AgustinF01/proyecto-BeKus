@@ -15,7 +15,7 @@
     <title>Comisiones</title>
 </head>
 
-<body>
+<body class="comision-body">
     <!-- Menu de navegacion -->
     <header>
         <nav class="menu" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
@@ -69,7 +69,7 @@
 
                 <div class="com-telefono">
                     <label for="telefono-comision">Telefono</label>
-                    <input type="text" name="" id="telefono-comision" placeholder="+54123456">
+                    <input type="text" name="" id="telefono-comision" placeholder="ej: +54123456789">
                 </div>
 
                 <div class="com-desc-title">
@@ -78,31 +78,32 @@
                 </div>
 
                 <div class="com-txt-area">
-                    <textarea name="" id="mensaje" placeholder="Escriba aqui..."></textarea>
+                    <textarea name="" id="mensaje" placeholder="Escriba en detalle su pedido aqui..."></textarea>
                 </div>
 
                 <div class="com-deseado">
-                    <label for="formatos">Elija los formatos deseados</label>
-                </div>
-
-                <div class="psd-label">
-                    <label for="psd">PSD</label>
-                    <input type="checkbox" name="psd" id="psd">
-                </div>
-
-                <div class="publ-label">
-                    <label for="publicidad">Publicidad</label>
-                    <input type="checkbox" name="publi" id="publicidad">
-                </div>
-
-                <div class="res-label">
-                    <label for="4k">4K/8K</label>
-                    <input type="checkbox" name="4k" id="4k">
-                </div>
-
-                <div class="pers-label">
-                    <label for="personalizado">Personalizado</label>
-                    <input type="checkbox" name="personalizado" id="personalizado">
+                    <label for="formatos">Elija los formatos deseados:</label>
+                    <div class="checkbox-container">
+                        <div class="psd-label">
+                            <label for="psd">PSD</label>
+                            <input type="checkbox" name="psd" id="psd">
+                        </div>
+                
+                        <div class="publ-label">
+                            <label for="publicidad">Publicidad</label>
+                            <input type="checkbox" name="publi" id="publicidad">
+                        </div>
+                
+                        <div class="res-label">
+                            <label for="4k">4K/8K</label>
+                            <input type="checkbox" name="4k" id="4k">
+                        </div>
+                
+                        <div class="pers-label">
+                            <label for="personalizado">Personalizado</label>
+                            <input type="checkbox" name="personalizado" id="personalizado">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="ref-label">
@@ -124,22 +125,67 @@
 
     </main>
 
-    <section>
-        <h2>Preguntas frecuentes</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio vero obcaecati facilis modi a,
-            fugiat quo reprehenderit quia, necessitatibus minima harum provident autem deserunt aspernatur alias
-            laudantium corrupti unde sequi.</p>
+    <section class="comision-section">
+        <h2>Preguntas frecuentes:</h2>
+
+        <div class="FAQ">
+            <div class="Q1">
+                <h2>- ¿Cuanto tiempo tarda?</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi dolorem ipsam pariatur numquam error ex delectus repellendus, sed placeat, dolore voluptates ut quam, nam exercitationem obcaecati cupiditate maxime dignissimos quidem.</p>
+            </div>
+
+            <div class="Q2">
+                <h2>- ¿Como recibo mi pedido?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo facilis asperiores exercitationem quibusdam, praesentium minima non aliquam omnis est, iste, ullam a accusantium ab? Velit sunt eos laborum sequi quia.</p>
+            </div>
+
+            <div class="Q3">
+                <h2>- ¿Que garantias tengo?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolorem assumenda minima repellendus quos. Vitae, accusamus fugiat doloremque cum enim perspiciatis quaerat reiciendis, quibusdam tenetur quas maxime, ut ipsum qui?</p>
+            </div>
+
+            <div class="Q4">
+                <h2>- ¿Que hay de los derechos de autor?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, magni maiores quidem corrupti nemo, iure incidunt obcaecati adipisci voluptatem possimus aspernatur debitis omnis, autem a ipsum cum illo reiciendis perferendis.</p>
+            </div>
+
+            <div class="Q5">
+                <h2>- Formas de pago</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, quae? Modi eligendi tempore corrupti, fuga reiciendis praesentium velit, neque asperiores aliquid, iure earum sint repudiandae possimus? Repudiandae ex esse ipsum.</p>
+            </div>
+            <div class="Q6">
+                <h2>- ¿Puedo hacer un cambio durante el proceso?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, reprehenderit qui expedita eos totam dolore voluptatum culpa, necessitatibus quia rem vero suscipit minima eveniet nam aliquid nulla et error. Blanditiis!</p>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <h3>BeKus - Artista Gráfico</h3>
-        <p>&copy; BeKus - 2024. Todos los derechos reservados.</p>
-        <ul>
-            <li><a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a></li>
-            <li><a href="#" class="icon"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#" class="icon"><i class="fab fa-patreon"></i></a></li>
-        </ul>
+        
+        <div class="footer-icon">
+            <ul>
+                <li><a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#" class="icon"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#" class="icon"><i class="fab fa-patreon"></i></a></li>
+                <li><a href="#" class="icon"><i class="fab fa-pixiv"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="footer-menu">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="portfolio.html">Portafolio</a></li>
+                <li><a href="commissions.html">Comisiones</a><li>
+                <li><a href="about.html">Sobre Mi</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-derechos">
+            <p>&copy; BeKus - 2024. Todos los derechos reservados.</p>
+        </div>
     </footer>
     <script src="./js/index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
