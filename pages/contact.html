@@ -13,20 +13,17 @@
     <!-- ---------------- -->
     <title>Contacto</title>
 </head>
-<body>
+<body class="contact-body">
     <!-- Menu de navegacion -->
     <header>
-        <nav class="menu" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
+        <nav class="menu" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500">
             <div class="logo">
-                <a href="index.html">BeKus</a>
+                <a href="../index.html">BeKus</a>
             </div>
-            <!-- Menu hamburguesa para moviles -->
-            <button class="hamburger" id="hamburger">
-                ☰
-            </button>
+
+            <button class="menu-toggle" id="menu-toggle">☰</button> <!-- Botón para el menú -->
     
             <div class="menu-links" id="nav-links">
-                <button class="close" id="close">&times;</button> <!-- Botón de cierre -->
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="portfolio.html">Portafolio</a></li>
@@ -38,52 +35,74 @@
         </nav>
     </header>
 
-    <!-- Titulo -->
-     <h1>Contáctame</h1>
-     <h2>Disponible para consultas, colaboraciones o comisiones</h2>
-
-    <!-- Formulario de contacto o consulta -->
-     <section>
-        <h3>Completa el siguiente formulario</h3>
-
-        <form action="#" method="get">
-            <label for="nombre-contacto">Nombre</label>
-            <input type="text" id="nombre-contacto" placeholder="ej: Jane">
-
-            <label for="apellido-contacto">Apellido</label>
-            <input type="text" id="apellido-contacto" placeholder="ej: Doe">
-
-            <br>
-
-            <label for="email-contacto">Correo electronico</label>
-            <input type="email" name="" id="email-contacto" placeholder="ej: janedoe@gmail.com">
-
-            <label for="telefono-contacto">Telefono</label>
-            <input type="text" id="telefono-contacto" placeholder="+54123456">
-
-            <br>
-
-            <label for="titulo-contacto">Breve descripcion de tu consulta</label>
-            <input type="text" name="" id="titulo-contacto" placeholder="Escriba aqui...">
-
-            <br>
-
-            <textarea name="" id="mensaje-contacto" placeholder="Detalle aqui su consulta o propuesta..."></textarea>
-
-            <br>
-
-            <button type="submit">Enviar</button>
-        </form>
-     </section>
-
+    <main class="contact-main">
+        <div class="contact-title" data-aos="fade-in" data-aos-duration="1400">
+            <h1>Contáctame</h1>
+            <h2>Disponible para consultas, colaboraciones o reclamos</h2>
+        </div>
+    
+        <section class="form-container">
+            <h3 >Completa el siguiente formulario</h3>
+    
+            <form class="formulario-comision" action="#" method="get">
+                <div class="com-nombre">
+                    <label for="nombre-comision">Nombre</label>
+                    <input type="text" name="" id="nombre-comision" placeholder="ej: Jane">
+                </div>
+    
+                <div class="com-apellido">
+                    <label for="apellido-comision">Apellido</label>
+                    <input type="text" name="" id="apellido-comision" placeholder="ej: Doe">
+                </div>
+    
+                <div class="com-email">
+                    <label for="email-comision">Correo electronico</label>
+                    <input type="email" name="" id="email-comision" placeholder="ej: janedoe@gmail.com">
+                </div>
+    
+                <div class="com-telefono">
+                    <label for="telefono-comision">Telefono</label>
+                    <input type="text" name="" id="telefono-comision" placeholder="ej: +54123456789">
+                </div>
+    
+                <div class="com-desc-title">
+                    <label for="titulo-comision">Asunto</label>
+                    <input type="text" name="" id="titulo-comision" placeholder="Escriba aqui...">
+                </div>
+    
+                <div class="com-txt-area">
+                    <textarea name="" id="mensaje" placeholder="Detalle su mensaje aqui..."></textarea>
+                </div>
+    
+                <div class="ref-label">
+                    <label for="subida-comision">Suba archivos o imagenes de ser necesario (opcional)</label>
+                </div>
+    
+                <div class="subida-label">
+                    <input type="file" name="" id="subida-comision">
+                </div>
+    
+                <div class="com-cancelar">
+                    <button type="reset">Cancelar</button>
+                </div>
+                <div class="com-enviar">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </section>
+    </main>
      <!-- Contacto por redes -->
-     <section>
-        <h3>Tambien puedes contactarme en mis redes sociales</h3>
-
-        <a href="#">Twitter</a>
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-     </section>
+    <section class="contact-media" data-aos="fade-up" data-aos-duration="1300">
+        <h3>¡Tambien puedes contactarme a traves de mis redes!</h3>
+        <div class="contact-icon">
+            <ul>
+                <li><a href="#" class="icon"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#" class="icon"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#" class="icon"><i class="fab fa-patreon"></i></a></li>
+                <li><a href="#" class="icon"><i class="fab fa-pixiv"></i></a></li>
+            </ul>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -112,7 +131,7 @@
             <p>&copy; BeKus - 2024. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="./js/index.js"></script>
+    <script src="../js/index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();

@@ -18,17 +18,14 @@
 <body class="comision-body">
     <!-- Menu de navegacion -->
     <header>
-        <nav class="menu" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">
+        <nav class="menu" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500">
             <div class="logo">
-                <a href="index.html">BeKus</a>
+                <a href="../index.html">BeKus</a>
             </div>
-            <!-- Menu hamburguesa para moviles -->
-            <button class="hamburger" id="hamburger">
-                ☰
-            </button>
+
+            <button class="menu-toggle" id="menu-toggle">☰</button> <!-- Botón para el menú -->
     
             <div class="menu-links" id="nav-links">
-                <button class="close" id="close">&times;</button> <!-- Botón de cierre -->
                 <ul>
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="portfolio.html">Portafolio</a></li>
@@ -42,7 +39,7 @@
 
     <main class="comision-main">
         <!-- Titulo -->
-        <div class="com-form-title">
+        <div class="com-form-title" data-aos="fade-in" data-aos-duration="1400">
             <h1>Solicita tu comision</h1>
             <h2>Personaliza tu obra, hecha a medida para ti</h2>
         </div>
@@ -187,7 +184,7 @@
             <p>&copy; BeKus - 2024. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="./js/index.js"></script>
+    <script src="../js/index.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();

@@ -15,20 +15,17 @@
     <title>BeKus - Artist</title>
 </head>
 
-<body>
+<body class="index-body">
     <!-- Menu de navegacion -->
     <header>
         <nav class="menu" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500">
             <div class="logo">
                 <a href="index.html">BeKus</a>
             </div>
-            <!-- Menu hamburguesa para moviles -->
-            <button class="hamburger" id="hamburger">
-                ☰
-            </button>
+
+            <button class="menu-toggle" id="menu-toggle">☰</button> <!-- Botón para el menú -->
     
             <div class="menu-links" id="nav-links">
-                <button class="close" id="close">&times;</button> <!-- Botón de cierre -->
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="./pages/portfolio.html">Portafolio</a></li>
@@ -51,9 +48,18 @@
             </div>
         </section>
 
+        <div class="arrow" data-aos="fade-up" data-aos-duration="600" data-aos-delay="3000">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
         <!-- Carousel -->
         <section class="galeria">
-            <div class="carousel-container">
+            <div class="galeria-titulo" data-aos="fade-up" data-aos-duration="700">
+                <h1>Algunos de mis trabajos</h1>
+            </div>
+            <div class="carousel-container" data-aos="fade-up" data-aos-duration="600">
                 <div style="--img: url(../img/slider-1.jpg);" class="box box-1"></div>
                 <div style="--img: url(../img/slider-2.jpg);" class="box box-2"></div>
                 <div style="--img: url(../img/slider-3.jpg);" class="box box-3"></div>
@@ -64,7 +70,7 @@
                 <div style="--img: url(../img/slider-8.jpg);" class="box box-8"></div>
             </div>
         
-            <div class="boton-portfolio" data-aos="fade-up" data-aos-duration="500">
+            <div class="boton-portfolio" data-aos="fade-up" data-aos-duration="800">
                 <button><a href="./pages/portfolio.html">Ver más</a></button>
             </div>
         </section>
