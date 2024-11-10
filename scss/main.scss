@@ -311,29 +311,28 @@ header {
         .boton-portfolio {
             display: flex;
             justify-content: center;
-        }
-        
-        .boton-portfolio button {
-            background-color: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            border-radius: 10px;
-            margin-top: 30px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-        }
-        
-        .boton-portfolio button:hover {
-            box-shadow: 0 0 40px 40px #d12323 inset;
-            border: none;
-        }
-        
-        .boton-portfolio a {
-            color: white;
-            text-decoration: none;
-            font-size: 25px;
-        }
-    
+
+            button {
+                background-color: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.7);
+                border-radius: 10px;
+                margin-top: 30px;
+                padding: 10px 20px;
+                cursor: pointer;
+                transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 25px;
+                }
+            }
+
+            button:hover {
+                box-shadow: 0 0 40px 40px #d12323 inset;
+                border: none;
+            }
+        }    
     }
     // APARTADO DE COMISIONES
     .comision-container {
@@ -366,28 +365,28 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        
-        .comision-button button {
-            @include pl-acento;
-            border: 1px solid whitesmoke;
-            border-radius: 10px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-        }
-        
-        .comision-button button:hover {
-            box-shadow: 0 0 40px 40px #0c0806 inset;
-            border: none;
-        }
-        
-        .comision-button a {
-            color: white;
-            text-decoration: none;
-            font-size: 25px;
-        }
 
+            button {
+                @include pl-acento;
+                border: 1px solid whitesmoke;
+                border-radius: 10px;
+                padding: 10px 20px;
+                cursor: pointer;
+                transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 25px;
+                }
+            }
+
+            button:hover {
+                box-shadow: 0 0 40px 40px #0c0806 inset;
+                border: none;
+            }
+        }
+                        
         .comision-text {
             grid-row: span 2 / span 2;
             grid-column-start: 2;
@@ -395,10 +394,10 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        
-        .comision-text p {
-            font-size: 20px;
+
+            p {
+                font-size: 20px;
+            }
         }
     }
 
@@ -431,10 +430,10 @@ header {
             justify-content: center;
             align-items: center;
             margin-bottom: 150px;
-        }
 
-        .about-ix-text p {
-            font-size: 20px;
+            p {
+                font-size: 20px;
+            }
         }
 
         .about-ix-img {
@@ -444,12 +443,12 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        
-        .about-ix-img img {
-            width: 550px;
-            height: 375px;
-            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+
+            img {
+                width: 550px;
+                height: 375px;
+                clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            }
         }
     }
 }
@@ -740,6 +739,7 @@ header {
         }
     
         .about-section {
+            overflow-x: hidden;
             display: grid;
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr 1fr;
@@ -1044,7 +1044,7 @@ header {
 }
 
 // MEDIA QUERIES
-@media (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 480px) {
     header {
         nav {
             justify-content: space-between;
@@ -1117,11 +1117,28 @@ header {
                     div {
                         font-size: 3em; // Reducir el tamaño de la fuente
                     }
+
+                    @keyframes slideInLeft {
+                        0% {
+                            transform: translate(-150%, -50%);
+                        }
+                        100% {
+                            transform: translate(-65%, -50%);
+                        }
+                    }
+                    @keyframes slideInRight {
+                        0% {
+                            transform: translate(150%, 50%);
+                        }
+                        100% {
+                            transform: translate(65%, 50%);
+                        }
+                    }
                 }
             }
     
             .arrow {
-                top: 70%;
+                top: 75%;
                 span {
                     width: 3vw;
                     height: 3vw;
@@ -1286,6 +1303,7 @@ header {
                 display: flex;
                 flex-direction: column;
                 margin: 5% 2%;
+                overflow-x: hidden;
 
                 .about-pt1, .about-pt3 {
                     display: block;
@@ -1322,8 +1340,296 @@ header {
 @media (min-width: 481px) and (max-width: 768px) {
     header {
         nav {
-            button {
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            z-index: 2;
+
+            .logo a {
+                font-size: 24px;
+                margin-left: 0; 
+                text-align: center; 
+            }
+
+            .menu-toggle {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 30px;
+                cursor: pointer;
+                margin-left: auto;
+                z-index: 4;
+            }
+
+            .menu-links {
                 display: none;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+                align-items: center;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.8);
+                z-index: 3;
+            }
+
+            .menu-links.active {
+                display: flex;
+            }
+
+            .menu-links ul {
+                flex-direction: column;
+                padding: 0;
+                align-items: center;
+                width: 100%;
+            }
+
+            .menu-links ul li {
+                display: block;
+            }
+
+            .menu-links ul a {
+                font-size: 18px;
+                padding: 0.5rem;
+                width: 100%;
+                text-align: center;
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+    // INDEX
+    .index-body {
+        overflow-x: hidden;
+        .index-main {
+            overflow-x: hidden;
+            .portada {
+                .image-container {                    
+                    div {
+                        font-size: 3em; // Reducir el tamaño de la fuente
+                    }
+
+                    @keyframes slideInLeft {
+                        0% {
+                            transform: translate(-150%, -50%);
+                        }
+                        100% {
+                            transform: translate(-75%, -50%);
+                        }
+                    }
+                    @keyframes slideInRight {
+                        0% {
+                            transform: translate(150%, 50%);
+                        }
+                        100% {
+                            transform: translate(75%, 50%);
+                        }
+                    }
+                }
+            }
+    
+            .arrow {
+                top: 115%;
+                span {
+                    width: 3vw;
+                    height: 3vw;
+                }
+            }
+
+            .arrow[data-aos] {
+                opacity: 1 !important;
+                transition: none !important;
+            }
+    
+            .galeria {
+                overflow-x: hidden;
+                margin-top: 15%;
+                .galeria-titulo {
+                    font-size: 16px;
+                    text-align: center;
+                    margin-top: 70px;
+                    margin-bottom: 35px; 
+                }        
+    
+                .carousel-container {
+                    grid-template-columns: 1fr 1fr;
+                    height: auto;
+                    transition: none; 
+                }
+        
+                .box {
+                    height: 200px;
+                    transform: none;
+                    filter: none; 
+                    background-size: cover;
+                    background-position: center;
+                }
+
+                .carousel-container:hover .box {
+                    filter: none; 
+                }
+
+                .carousel-container:has(.box-1:hover),
+                .carousel-container:has(.box-2:hover),
+                .carousel-container:has(.box-3:hover),
+                .carousel-container:has(.box-4:hover),
+                .carousel-container:has(.box-5:hover),
+                .carousel-container:has(.box-6:hover),
+                .carousel-container:has(.box-7:hover),
+                .carousel-container:has(.box-8:hover) {
+                    grid-template-columns: 1fr 1fr;
+                }
+    
+                .boton-portfolio {
+                    text-align: center;
+                    margin-top: 20px;
+                    button {
+                        font-size: 18px;
+                        padding: 10px 20px;
+                    }
+                }
+            }
+    
+            .comision-container {
+                grid-template-columns: 1fr;
+                height: auto;
+                margin-top: 70px;
+    
+                .comision-title {
+                    h2 {
+                        font-size: 25px;
+                        text-align: center;
+                        margin-top: 5px;
+                    }
+                }
+
+                .comision-button {
+                    button {
+                        width: 36vw;
+                        height: 10vw;
+                        margin-left: 5px;
+                        margin-bottom: 5px;
+                        a {
+                            margin-bottom: 25px;
+                            font-size: 11px;
+                            text-align: center;
+                        }
+                    }
+                }
+    
+                .comision-text {
+                    margin-right: 5px;
+                    p {
+                        font-size: 12px;
+                        text-align: justify;
+                    }
+                }
+            }
+    
+            .about-index {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                margin-bottom: 0;
+    
+                .about-ix-title {
+                    font-size: 23px;
+                }
+    
+                .about-ix-text p {
+                    font-size: 20px;
+                    text-align: justify;
+                }
+    
+                .about-ix-img img {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    // PORTAFOLIO
+    .portfolio-body {
+        overflow-x: hidden;
+
+        .portfolio-main {
+            .gallery {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+
+    // COMISIONES
+    .comision-body {
+        background-size: cover;
+        .comision-section {
+            height: auto;
+            //margin-bottom: 90%;
+            h2 {
+                font-size: 20px;
+            }
+            .FAQ {
+                margin: 0 3% 0 2%;
+                display: grid;
+                grid-template-columns: 1fr;
+                h2 {
+                    text-align: left;
+                    text-decoration: underline;
+                    font-size: 17px;
+                }
+                p {
+                    text-align: justify;
+                    font-size: 15px;
+                    margin-bottom: 10%;
+                }
+            }
+        }
+    }
+
+    // ABOUT
+    .about-body {
+        overflow-x: hidden;
+
+        .about-main {
+            .about-portada {
+                width: 100%;
+            }
+
+            .about-section {
+                display: flex;
+                flex-direction: column;
+                margin: 5% 2%;
+                overflow-x: hidden;
+
+                .about-pt1, .about-pt3 {
+                    display: block;
+                    font-size: 14px; 
+                }
+                .about-pt1 img, .about-pt3 img {
+                    width: 100%;
+                    height: auto; 
+                    margin: 5% 0 2% 0; 
+                }
+                .about-pt2 {
+                    margin-top: 2%;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    // CONTACTO
+
+
+    .footer {
+        width: 100%;
+        .footer-menu {
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
             }
         }
     }
@@ -1332,8 +1638,279 @@ header {
 @media (min-width: 769px) and (max-width: 1024px) {
     header {
         nav {
+            .menu-links {
+                gap: 10px;
+                ul {
+                    li {
+                        a {
+                            padding: 10px;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
             button {
                 display: none;
+            }
+        }
+    }
+    // INDEX
+    .index-body {
+        overflow-x: hidden;
+        .index-main {
+            overflow-x: hidden;
+            .portada {
+                .image-container {                    
+                    div {
+                        font-size: 3em; // Reducir el tamaño de la fuente
+                    }
+
+                    @keyframes slideInLeft {
+                        0% {
+                            transform: translate(-150%, -50%);
+                        }
+                        100% {
+                            transform: translate(-75%, -50%);
+                        }
+                    }
+                    @keyframes slideInRight {
+                        0% {
+                            transform: translate(150%, 50%);
+                        }
+                        100% {
+                            transform: translate(75%, 50%);
+                        }
+                    }
+                }
+            }
+    
+            .arrow {
+                top: 79%;
+                span {
+                    width: 3vw;
+                    height: 3vw;
+                }
+            }
+    
+            .galeria {
+                //overflow-x: hidden;
+                margin-top: 5%;
+                
+                .galeria-titulo {
+                    font-size: 15px;
+                }
+
+                .boton-portfolio {
+                    button {
+                        a {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+    
+            .comision-container {
+                grid-template-columns: 1fr;
+                height: auto;
+                margin-top: 15%;
+    
+                .comision-title {
+                    h2 {
+                        font-size: 25px;
+                        text-align: center;
+                        margin-top: 5%;
+                        margin-left: 25%;
+                    }
+                }
+
+                .comision-button {
+                    button {
+                        width: 25vw;
+                        height: 7vw;
+                        margin-left: 25%;
+                        margin-bottom: 5%;
+                        a {
+                            margin-bottom: 25px;
+                            font-size: 11px;
+                            text-align: center;
+                        }
+                    }
+                }
+    
+                .comision-text {
+                    margin-right: 5%;
+                    margin-left: 25%;
+                    p {
+                        font-size: 15px;
+                        text-align: justify;
+                    }
+                }
+            }
+    
+            .about-index {
+                
+                .about-ix-title {
+                    font-size: 15px;
+                    padding-top: 25%;
+                }
+    
+                .about-ix-text {
+                    p {
+                        font-size: 15px;
+                        text-align: justify;
+                    }
+                }
+    
+                .about-ix-img {
+                    img {
+                        width: 355px;
+                        height: 250px;
+                    }
+                }
+            }
+        }
+    }
+    
+    // PORTAFOLIO
+    .portfolio-body {
+        overflow-x: hidden;
+        .portfolio-main {
+            h1 {
+                font-size: 15px;
+            }
+        }
+    }
+
+    // COMISIONES
+    .comision-body {
+        background-size: cover;
+        .comision-main {
+            .com-form-title {
+                h1 {
+                    font-size: 25px;
+                }
+                h2 {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .comision-section {
+            height: auto;
+            //margin-bottom: 90%;
+            h2 {
+                font-size: 20px;
+            }
+            .FAQ {
+                margin: 0 3% 0 2%;
+                display: grid;
+                grid-template-columns: 1fr;
+                h2 {
+                    text-align: left;
+                    text-decoration: underline;
+                    font-size: 17px;
+                }
+                p {
+                    text-align: justify;
+                    font-size: 15px;
+                    margin-bottom: 10%;
+                }
+
+                .Q1,
+                .Q2,
+                .Q3,
+                .Q4,
+                .Q5,
+                .Q6 {
+                    height: 100px;
+                }
+            }
+        }
+    }
+
+    // ABOUT
+    .about-body {
+        overflow-x: hidden;
+
+        .about-main {
+            .about-portada {
+                width: 100%;
+            }
+
+            .about-section {
+                overflow-x: hidden;
+                .about-pt1 {
+                    font-size: 15px;
+        
+                    // img {
+                    //     width: 350px;
+                    //     height: 300px;
+                    //     margin-left: 2%;
+                    // }
+                    p {
+                        text-align: justify;
+                    }
+                }
+        
+                .about-pt2 {
+                    font-size: 15px;
+                    margin-top: 2%;
+                    text-align: justify;
+                    height: 250px;
+                }
+        
+                .about-pt3 {
+                    margin-top: 0;
+                    font-size: 15px;
+                    display: flex;
+                    flex-direction: row-reverse;
+                    height: 150px;
+        
+                    // img {
+                    //     width: 350px;
+                    //     height: 300px;
+                    //     margin-right: 2%;
+                    // }
+        
+                    p {
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+    }
+
+    // CONTACTO
+
+
+    .footer {
+        width: 100%;
+
+        .footer-icon {
+            ul {
+                li {
+                    a {
+                        i {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-menu {
+            ul {
+                li {
+                    a {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+
+        .footer-derechos {
+            p {
+                font-size: 15px;
             }
         }
     }
@@ -1342,11 +1919,58 @@ header {
 @media (min-width: 1025px) and (max-width: 1280px) {
     header {
         nav {
+            .menu-links {
+                gap: 10px;
+                ul {
+                    li {
+                        a {
+                            padding: 10px;
+                        }
+                    }
+                }
+            }
             button {
                 display: none;
             }
         }
     }
+    // INDEX
+    .index-body {
+        overflow-x: hidden;
+        .index-main {
+            overflow-x: hidden;
+            .portada {
+                .image-container {                    
+                    div {
+                        font-size: 4em; //
+                    }
+                }
+            }
+    
+            .galeria {
+                //overflow-x: hidden;
+                margin-top: 5%;
+                
+                .galeria-titulo {
+                    font-size: 15px;
+                }
+
+                .boton-portfolio {
+                    button {
+                        a {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // PORTAFOLIO SIN CAMBIOS
+
+    // COMISIONES SIN CAMBIOS
+
+    // SOBRE MI SIN CAMBIOS
 }
 
 @media (min-width: 1281px) and (max-width: 1440px) {
@@ -1355,6 +1979,18 @@ header {
             button {
                 display: none;
             }
+        }
+    }
+
+    .index-main {
+        .index-body {
+            .arrow {
+                top: 100%;
+            }
+        }
+
+        .galeria {
+            margin-top: 10%;
         }
     }
 }

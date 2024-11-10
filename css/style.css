@@ -263,14 +263,14 @@ header nav .menu-links ul a:hover:after {
   cursor: pointer;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
-.index-main .galeria .boton-portfolio button:hover {
-  box-shadow: 0 0 40px 40px #d12323 inset;
-  border: none;
-}
-.index-main .galeria .boton-portfolio a {
+.index-main .galeria .boton-portfolio button a {
   color: white;
   text-decoration: none;
   font-size: 25px;
+}
+.index-main .galeria .boton-portfolio button:hover {
+  box-shadow: 0 0 40px 40px #d12323 inset;
+  border: none;
 }
 .index-main .comision-container {
   display: grid;
@@ -309,14 +309,14 @@ header nav .menu-links ul a:hover:after {
   cursor: pointer;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
 }
-.index-main .comision-container .comision-button button:hover {
-  box-shadow: 0 0 40px 40px #0c0806 inset;
-  border: none;
-}
-.index-main .comision-container .comision-button a {
+.index-main .comision-container .comision-button button a {
   color: white;
   text-decoration: none;
   font-size: 25px;
+}
+.index-main .comision-container .comision-button button:hover {
+  box-shadow: 0 0 40px 40px #0c0806 inset;
+  border: none;
 }
 .index-main .comision-container .comision-text {
   grid-row: span 2/span 2;
@@ -631,6 +631,7 @@ header nav .menu-links ul a:hover:after {
   text-shadow: 2px 2px 3px black;
 }
 .about-body .about-main .about-section {
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -899,7 +900,7 @@ header nav .menu-links ul a:hover:after {
   font-size: 20px;
 }
 
-@media (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 480px) {
   header nav {
     justify-content: space-between;
     align-items: center;
@@ -962,8 +963,24 @@ header nav .menu-links ul a:hover:after {
   .index-body .index-main .portada .image-container div {
     font-size: 3em;
   }
+  @keyframes slideInLeft {
+    0% {
+      transform: translate(-150%, -50%);
+    }
+    100% {
+      transform: translate(-65%, -50%);
+    }
+  }
+  @keyframes slideInRight {
+    0% {
+      transform: translate(150%, 50%);
+    }
+    100% {
+      transform: translate(65%, 50%);
+    }
+  }
   .index-body .index-main .arrow {
-    top: 70%;
+    top: 75%;
   }
   .index-body .index-main .arrow span {
     width: 3vw;
@@ -1096,6 +1113,7 @@ header nav .menu-links ul a:hover:after {
     display: flex;
     flex-direction: column;
     margin: 5% 2%;
+    overflow-x: hidden;
   }
   .about-body .about-main .about-section .about-pt1, .about-body .about-main .about-section .about-pt3 {
     display: block;
@@ -1120,23 +1138,466 @@ header nav .menu-links ul a:hover:after {
   }
 }
 @media (min-width: 481px) and (max-width: 768px) {
-  header nav button {
+  header nav {
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 2;
+  }
+  header nav .logo a {
+    font-size: 24px;
+    margin-left: 0;
+    text-align: center;
+  }
+  header nav .menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: auto;
+    z-index: 4;
+  }
+  header nav .menu-links {
     display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 3;
+  }
+  header nav .menu-links.active {
+    display: flex;
+  }
+  header nav .menu-links ul {
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+    width: 100%;
+  }
+  header nav .menu-links ul li {
+    display: block;
+  }
+  header nav .menu-links ul a {
+    font-size: 18px;
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+  }
+  .index-body {
+    overflow-x: hidden;
+  }
+  .index-body .index-main {
+    overflow-x: hidden;
+  }
+  .index-body .index-main .portada .image-container div {
+    font-size: 3em;
+  }
+  @keyframes slideInLeft {
+    0% {
+      transform: translate(-150%, -50%);
+    }
+    100% {
+      transform: translate(-75%, -50%);
+    }
+  }
+  @keyframes slideInRight {
+    0% {
+      transform: translate(150%, 50%);
+    }
+    100% {
+      transform: translate(75%, 50%);
+    }
+  }
+  .index-body .index-main .arrow {
+    top: 115%;
+  }
+  .index-body .index-main .arrow span {
+    width: 3vw;
+    height: 3vw;
+  }
+  .index-body .index-main .arrow[data-aos] {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  .index-body .index-main .galeria {
+    overflow-x: hidden;
+    margin-top: 15%;
+  }
+  .index-body .index-main .galeria .galeria-titulo {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 35px;
+  }
+  .index-body .index-main .galeria .carousel-container {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    transition: none;
+  }
+  .index-body .index-main .galeria .box {
+    height: 200px;
+    transform: none;
+    filter: none;
+    background-size: cover;
+    background-position: center;
+  }
+  .index-body .index-main .galeria .carousel-container:hover .box {
+    filter: none;
+  }
+  .index-body .index-main .galeria .carousel-container:has(.box-1:hover),
+  .index-body .index-main .galeria .carousel-container:has(.box-2:hover),
+  .index-body .index-main .galeria .carousel-container:has(.box-3:hover),
+  .index-body .index-main .galeria .carousel-container:has(.box-4:hover),
+  .index-body .index-main .galeria .carousel-container:has(.box-5:hover),
+  .index-body .index-main .galeria .carousel-container:has(.box-6:hover),
+  .index-body .index-main .galeria .carousel-container:has(.box-7:hover),
+  .index-body .index-main .galeria .carousel-container:has(.box-8:hover) {
+    grid-template-columns: 1fr 1fr;
+  }
+  .index-body .index-main .galeria .boton-portfolio {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .index-body .index-main .galeria .boton-portfolio button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+  .index-body .index-main .comision-container {
+    grid-template-columns: 1fr;
+    height: auto;
+    margin-top: 70px;
+  }
+  .index-body .index-main .comision-container .comision-title h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 5px;
+  }
+  .index-body .index-main .comision-container .comision-button button {
+    width: 36vw;
+    height: 10vw;
+    margin-left: 5px;
+    margin-bottom: 5px;
+  }
+  .index-body .index-main .comision-container .comision-button button a {
+    margin-bottom: 25px;
+    font-size: 11px;
+    text-align: center;
+  }
+  .index-body .index-main .comision-container .comision-text {
+    margin-right: 5px;
+  }
+  .index-body .index-main .comision-container .comision-text p {
+    font-size: 12px;
+    text-align: justify;
+  }
+  .index-body .index-main .about-index {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-bottom: 0;
+  }
+  .index-body .index-main .about-index .about-ix-title {
+    font-size: 23px;
+  }
+  .index-body .index-main .about-index .about-ix-text p {
+    font-size: 20px;
+    text-align: justify;
+  }
+  .index-body .index-main .about-index .about-ix-img img {
+    display: none;
+  }
+  .portfolio-body {
+    overflow-x: hidden;
+  }
+  .portfolio-body .portfolio-main .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .comision-body {
+    background-size: cover;
+  }
+  .comision-body .comision-section {
+    height: auto;
+  }
+  .comision-body .comision-section h2 {
+    font-size: 20px;
+  }
+  .comision-body .comision-section .FAQ {
+    margin: 0 3% 0 2%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .comision-body .comision-section .FAQ h2 {
+    text-align: left;
+    text-decoration: underline;
+    font-size: 17px;
+  }
+  .comision-body .comision-section .FAQ p {
+    text-align: justify;
+    font-size: 15px;
+    margin-bottom: 10%;
+  }
+  .about-body {
+    overflow-x: hidden;
+  }
+  .about-body .about-main .about-portada {
+    width: 100%;
+  }
+  .about-body .about-main .about-section {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 2%;
+    overflow-x: hidden;
+  }
+  .about-body .about-main .about-section .about-pt1, .about-body .about-main .about-section .about-pt3 {
+    display: block;
+    font-size: 14px;
+  }
+  .about-body .about-main .about-section .about-pt1 img, .about-body .about-main .about-section .about-pt3 img {
+    width: 100%;
+    height: auto;
+    margin: 5% 0 2% 0;
+  }
+  .about-body .about-main .about-section .about-pt2 {
+    margin-top: 2%;
+    font-size: 14px;
+  }
+  .footer {
+    width: 100%;
+  }
+  .footer .footer-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
+  header nav .menu-links {
+    gap: 10px;
+  }
+  header nav .menu-links ul li a {
+    padding: 10px;
+    font-size: 15px;
+  }
   header nav button {
     display: none;
   }
+  .index-body {
+    overflow-x: hidden;
+  }
+  .index-body .index-main {
+    overflow-x: hidden;
+  }
+  .index-body .index-main .portada .image-container div {
+    font-size: 3em;
+  }
+  @keyframes slideInLeft {
+    0% {
+      transform: translate(-150%, -50%);
+    }
+    100% {
+      transform: translate(-75%, -50%);
+    }
+  }
+  @keyframes slideInRight {
+    0% {
+      transform: translate(150%, 50%);
+    }
+    100% {
+      transform: translate(75%, 50%);
+    }
+  }
+  .index-body .index-main .arrow {
+    top: 79%;
+  }
+  .index-body .index-main .arrow span {
+    width: 3vw;
+    height: 3vw;
+  }
+  .index-body .index-main .galeria {
+    margin-top: 5%;
+  }
+  .index-body .index-main .galeria .galeria-titulo {
+    font-size: 15px;
+  }
+  .index-body .index-main .galeria .boton-portfolio button a {
+    font-size: 15px;
+  }
+  .index-body .index-main .comision-container {
+    grid-template-columns: 1fr;
+    height: auto;
+    margin-top: 15%;
+  }
+  .index-body .index-main .comision-container .comision-title h2 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 25%;
+  }
+  .index-body .index-main .comision-container .comision-button button {
+    width: 25vw;
+    height: 7vw;
+    margin-left: 25%;
+    margin-bottom: 5%;
+  }
+  .index-body .index-main .comision-container .comision-button button a {
+    margin-bottom: 25px;
+    font-size: 11px;
+    text-align: center;
+  }
+  .index-body .index-main .comision-container .comision-text {
+    margin-right: 5%;
+    margin-left: 25%;
+  }
+  .index-body .index-main .comision-container .comision-text p {
+    font-size: 15px;
+    text-align: justify;
+  }
+  .index-body .index-main .about-index .about-ix-title {
+    font-size: 15px;
+    padding-top: 25%;
+  }
+  .index-body .index-main .about-index .about-ix-text p {
+    font-size: 15px;
+    text-align: justify;
+  }
+  .index-body .index-main .about-index .about-ix-img img {
+    width: 355px;
+    height: 250px;
+  }
+  .portfolio-body {
+    overflow-x: hidden;
+  }
+  .portfolio-body .portfolio-main h1 {
+    font-size: 15px;
+  }
+  .comision-body {
+    background-size: cover;
+  }
+  .comision-body .comision-main .com-form-title h1 {
+    font-size: 25px;
+  }
+  .comision-body .comision-main .com-form-title h2 {
+    font-size: 20px;
+  }
+  .comision-body .comision-section {
+    height: auto;
+  }
+  .comision-body .comision-section h2 {
+    font-size: 20px;
+  }
+  .comision-body .comision-section .FAQ {
+    margin: 0 3% 0 2%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .comision-body .comision-section .FAQ h2 {
+    text-align: left;
+    text-decoration: underline;
+    font-size: 17px;
+  }
+  .comision-body .comision-section .FAQ p {
+    text-align: justify;
+    font-size: 15px;
+    margin-bottom: 10%;
+  }
+  .comision-body .comision-section .FAQ .Q1,
+  .comision-body .comision-section .FAQ .Q2,
+  .comision-body .comision-section .FAQ .Q3,
+  .comision-body .comision-section .FAQ .Q4,
+  .comision-body .comision-section .FAQ .Q5,
+  .comision-body .comision-section .FAQ .Q6 {
+    height: 100px;
+  }
+  .about-body {
+    overflow-x: hidden;
+  }
+  .about-body .about-main .about-portada {
+    width: 100%;
+  }
+  .about-body .about-main .about-section {
+    overflow-x: hidden;
+  }
+  .about-body .about-main .about-section .about-pt1 {
+    font-size: 15px;
+  }
+  .about-body .about-main .about-section .about-pt1 p {
+    text-align: justify;
+  }
+  .about-body .about-main .about-section .about-pt2 {
+    font-size: 15px;
+    margin-top: 2%;
+    text-align: justify;
+    height: 250px;
+  }
+  .about-body .about-main .about-section .about-pt3 {
+    margin-top: 0;
+    font-size: 15px;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 150px;
+  }
+  .about-body .about-main .about-section .about-pt3 p {
+    text-align: justify;
+  }
+  .footer {
+    width: 100%;
+  }
+  .footer .footer-icon ul li a i {
+    font-size: 20px;
+  }
+  .footer .footer-menu ul li a {
+    font-size: 15px;
+  }
+  .footer .footer-derechos p {
+    font-size: 15px;
+  }
 }
 @media (min-width: 1025px) and (max-width: 1280px) {
+  header nav .menu-links {
+    gap: 10px;
+  }
+  header nav .menu-links ul li a {
+    padding: 10px;
+  }
   header nav button {
     display: none;
+  }
+  .index-body {
+    overflow-x: hidden;
+  }
+  .index-body .index-main {
+    overflow-x: hidden;
+  }
+  .index-body .index-main .portada .image-container div {
+    font-size: 4em;
+  }
+  .index-body .index-main .galeria {
+    margin-top: 5%;
+  }
+  .index-body .index-main .galeria .galeria-titulo {
+    font-size: 15px;
+  }
+  .index-body .index-main .galeria .boton-portfolio button a {
+    font-size: 15px;
   }
 }
 @media (min-width: 1281px) and (max-width: 1440px) {
   header nav button {
     display: none;
+  }
+  .index-main .index-body .arrow {
+    top: 100%;
+  }
+  .index-main .galeria {
+    margin-top: 10%;
   }
 }
 @media (min-width: 1441px) {
