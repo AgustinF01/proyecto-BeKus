@@ -1,0 +1,345 @@
+.index-main {
+    .portada {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .image-container {
+            position: relative;
+            z-index: 1; 
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s;
+    
+            img {
+                max-width: 100%;
+                height: auto;
+                mask-image: linear-gradient(black, transparent);
+                filter: drop-shadow(25px 5px 3px black);
+            }
+    
+            div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 5em; 
+                color: rgba(255, 255, 255, 0.7);
+                text-align: center;
+                z-index: 0;
+                opacity: 0;
+                animation: fadeInText 1s forwards;
+                animation-delay: 1.5s;
+    
+                .part1 {
+                    transform: translateX(-100%); /* Comienza fuera de la pantalla a la izquierda */
+                    animation: slideInLeft 1s forwards; /* Animación de entrada desde la izquierda */
+                    animation-delay: 1s; /* Retraso para el texto */
+                }
+                
+                .part2 {
+                    transform: translateX(100%); /* Comienza fuera de la pantalla a la derecha */
+                    animation: slideInRight 1s forwards; /* Animación de entrada desde la derecha */
+                    animation-delay: 1s; /* Retraso para el texto */
+                }
+                
+                span {
+                    display: inline-block; /* Permite que se parta en dos */
+                }
+            }
+    
+            @keyframes fadeIn {
+                to {
+                    opacity: 1; /* Finaliza completamente visible */
+                }
+            }
+            
+            @keyframes fadeInText {
+                to {
+                    opacity: 1; /* Hace que el texto sea visible */
+                }
+            }
+            
+            @keyframes slideInLeft {
+                0% {
+                    transform: translate(-150%, -50%); /* Comienza fuera de la pantalla a la izquierda */
+                }
+                100% {
+                    transform: translate(-80%, -50%); /* Termina en el centro */
+                }
+            }
+            
+            @keyframes slideInRight {
+                0% {
+                    transform: translate(150%, -50%); /* Comienza fuera de la pantalla a la derecha */
+                }
+                100% {
+                    transform: translate(80%, -50%); /* Termina en el centro */
+                }
+            }
+            
+        }   
+    }
+
+    .arrow {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform: rotate(360deg);
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: 1.5vw;
+            height: 1.5vw;
+            border-bottom: 5px solid white;
+            border-right: 5px solid white;
+            transform: rotate(45deg);
+            margin: -10px;
+            animation: animate 2s infinite;
+        }
+        span:nth-child(2) {
+            animation-delay: -0.2s;
+        }
+        span:nth-child(3) {
+            animation-delay: -0.4s;
+        }
+        @keyframes animate {
+            0% {
+                opacity: 0;
+                transform: rotate(45deg) translate(-20px, -20px);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: rotate(45deg) translate(20px, 20px);
+            }
+        }
+    }
+
+    // CARRUSEL
+    .galeria {
+        margin-top: 5%;
+
+        .galeria-titulo {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 50px;
+        }
+
+        .carousel-container {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 15px;
+            width: 80%;
+            height: 375px;
+            transition: all 400ms;
+            margin-left: 10%;
+        }
+    
+        .carousel-container:hover .box {
+            filter: grayscale(100%) opacity(24%);
+        }
+    
+        .box {
+            position: relative;
+            background: var(--img) center center;
+            background-size: cover;
+            transition: all 400ms;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .carousel-container .box:hover {
+            filter: grayscale(0%) opacity(100%);
+        }
+    
+        .carousel-container:has(.box-1:hover) {
+            grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+    
+        .carousel-container:has(.box-2:hover) {
+            grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        }
+    
+        .carousel-container:has(.box-3:hover) {
+            grid-template-columns: 1fr 1fr 3fr 1fr 1fr 1fr 1fr 1fr;
+        }
+    
+        .carousel-container:has(.box-4:hover) {
+            grid-template-columns: 1fr 1fr 1fr 3fr 1fr 1fr 1fr 1fr;
+        }
+    
+        .carousel-container:has(.box-5:hover) {
+            grid-template-columns: 1fr 1fr 1fr 1fr 3fr 1fr 1fr 1fr;
+        }
+    
+        .carousel-container:has(.box-6:hover) {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 3fr 1fr 1fr;
+        }
+    
+        .carousel-container:has(.box-7:hover) {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 3fr 1fr;
+        }
+    
+        .carousel-container:has(.box-8:hover) {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 3fr;
+        }
+    
+        .box:nth-child(odd) {
+            transform: translateY(-16px);
+        }
+    
+        .box:nth-child(even) {
+            transform: translateY(16px);
+        }
+    
+        .boton-portfolio {
+            display: flex;
+            justify-content: center;
+
+            button {
+                background-color: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.7);
+                border-radius: 10px;
+                margin-top: 30px;
+                padding: 10px 20px;
+                cursor: pointer;
+                transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+                a {
+                    color: $color-text;
+                    text-decoration: none;
+                    font-size: 25px;
+                }
+            }
+
+            button:hover {
+                box-shadow: 0 0 40px 40px #d12323 inset;
+                border: none;
+            }
+        }    
+    }
+    // APARTADO DE COMISIONES
+    .comision-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 8px;
+        color: $color-text;
+        margin: auto;
+        margin-top: 150px;
+        background-color: $color-secondary;
+        width: 95%;
+        height: 250px;
+        background-image: url(../img/bg-1.jpeg);
+        background-size: cover;
+
+        .comision-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .comision-title h2 {
+            font-size: 40px;
+        }
+
+        .comision-button {
+            grid-column-start: 1;
+            grid-row-start: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                background-color: $color-accent;
+                border: 1px solid whitesmoke;
+                border-radius: 10px;
+                padding: 10px 20px;
+                cursor: pointer;
+                transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+
+                a {
+                    color: $color-text;
+                    text-decoration: none;
+                    font-size: 25px;
+                }
+            }
+
+            button:hover {
+                box-shadow: 0 0 40px 40px #0c0806 inset;
+                border: none;
+            }
+        }
+                        
+        .comision-text {
+            grid-row: span 2 / span 2;
+            grid-column-start: 2;
+            grid-row-start: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+
+    // APARTADO SOBRE MI
+    .about-index {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 8px;
+        margin: auto;
+        color: $color-text;
+        margin-top: 150px;
+        margin-bottom: 100px;
+        width: 95%;
+        height: 350px;
+        
+
+        .about-ix-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+        }
+
+        .about-ix-text {
+            grid-column-start: 1;
+            grid-row-start: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 150px;
+
+            p {
+                font-size: 20px;
+            }
+        }
+
+        .about-ix-img {
+            grid-row: span 2 / span 2;
+            grid-column-start: 2;
+            grid-row-start: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 550px;
+                height: 375px;
+                clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            }
+        }
+    }
+}
