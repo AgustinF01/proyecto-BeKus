@@ -5,6 +5,7 @@
             align-items: center;
             padding: 10px;
             z-index: 2;
+            margin-top: 0;
 
             .logo a {
                 font-size: 24px;
@@ -25,8 +26,8 @@
             .menu-links {
                 display: none;
                 flex-direction: column;
-                gap: 10px;
-                margin-top: 10px;
+                gap: 15px;
+                //padding-top: 0;
                 align-items: center;
                 width: 100%;
                 position: absolute;
@@ -42,7 +43,9 @@
 
             .menu-links ul {
                 flex-direction: column;
-                padding: 0;
+                padding-top: 10px;
+                margin-top: 5px;
+                margin-bottom: 10px;
                 align-items: center;
                 width: 100%;
             }
@@ -69,7 +72,7 @@
             .portada {
                 .image-container {                    
                     div {
-                        font-size: 3em; // Reducir el tamaño de la fuente
+                        font-size: 3em; 
                     }
 
                     @keyframes slideInLeft {
@@ -101,6 +104,7 @@
     
             .galeria {
                 overflow-x: hidden;
+                overflow-y: hidden;
                 margin-top: 15%;
                 .galeria-titulo {
                     font-size: 16px;
@@ -142,8 +146,11 @@
                     text-align: center;
                     margin-top: 20px;
                     button {
-                        font-size: 18px;
                         padding: 10px 20px;
+
+                        a {
+                            font-size: 15px;
+                        }
                     }
                 }
             }
@@ -155,31 +162,53 @@
     
                 .comision-title {
                     h2 {
-                        font-size: 25px;
+                        font-size: 20px;
                         text-align: center;
                         margin-top: 5px;
+                        margin-left: 5%;
                     }
                 }
 
                 .comision-button {
+                    margin: 2% 0 2% 0;
                     button {
-                        width: 36vw;
+                        border-radius: 50px;
+                        border: 0;
+                        background-color: white;
+                        box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+                        letter-spacing: 1.5px;
+                        font-size: 10px;
+                        color: black;
+                        width: 21vw;
                         height: 10vw;
-                        margin-left: 5px;
-                        margin-bottom: 5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+        
                         a {
-                            margin-bottom: 25px;
-                            font-size: 11px;
+                            text-decoration: none;
                             text-align: center;
                         }
+                    }
+                    
+                    button:hover {
+                        transform: none !important;
+                        transition: none !important;
+                    }
+                    
+                    button:active {
+                        transition: none !important;
+                        transform: none !important;
                     }
                 }
     
                 .comision-text {
-                    margin-right: 5px;
+                    margin-right: 2%;
+                    margin-left: 2%;
                     p {
                         font-size: 12px;
                         text-align: justify;
+
                     }
                 }
             }
@@ -190,11 +219,11 @@
                 margin-bottom: 0;
     
                 .about-ix-title {
-                    font-size: 23px;
+                    font-size: 20px;
                 }
     
                 .about-ix-text p {
-                    font-size: 20px;
+                    font-size: 15px;
                     text-align: justify;
                 }
     
@@ -219,17 +248,60 @@
 
     // COMISIONES
     .comision-body {
-        background-size: cover;
-        .comision-section {
-            height: auto;
-            //margin-bottom: 90%;
-            h2 {
-                font-size: 20px;
+        .comision-main {
+            .com-form-title {
+                h1 {
+                    font-size: 25px;
+                }
+                h2 {
+                    font-size: 20px;
+                }
             }
-            .FAQ {
-                margin: 0 3% 0 2%;
+            .pricing-table {
                 display: grid;
                 grid-template-columns: 1fr;
+                gap: 15px;
+                align-items: center;
+                justify-content: center;
+
+                .pricing-card {
+                    width: 100%;
+                    .imageContainer {
+                        transform: none;
+                        transition: none;
+                        gap: 10px;
+
+                        img {
+                            transition: none;
+                            object-fit: cover;
+                        }
+                        img:hover {
+                            transform: none;
+                        }
+                    }
+                }
+
+                .pricing-card:hover{
+                    transform: none;
+                }
+            }
+
+            .form-container {
+                margin-top: 10%;
+            }
+        }
+        .comision-section {
+            height: auto;
+            h2 {
+                font-size: 20px;
+                text-align: center;
+            }
+            .FAQ {
+                margin: 0 5% 0 5%;
+                padding-bottom: 15%;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 15px;
                 h2 {
                     text-align: left;
                     text-decoration: underline;
@@ -238,7 +310,6 @@
                 p {
                     text-align: justify;
                     font-size: 15px;
-                    margin-bottom: 10%;
                 }
             }
         }
@@ -295,6 +366,7 @@
             align-items: center;
             padding: 10px;
             z-index: 2;
+            margin-top: 0;
 
             .logo a {
                 font-size: 24px;
@@ -315,8 +387,8 @@
             .menu-links {
                 display: none;
                 flex-direction: column;
-                gap: 10px;
-                margin-top: 10px;
+                gap: 15px;
+                //padding-top: 0;
                 align-items: center;
                 width: 100%;
                 position: absolute;
@@ -332,7 +404,9 @@
 
             .menu-links ul {
                 flex-direction: column;
-                padding: 0;
+                padding-top: 10px;
+                margin-top: 5px;
+                margin-bottom: 10px;
                 align-items: center;
                 width: 100%;
             }
@@ -396,6 +470,7 @@
     
             .galeria {
                 overflow-x: hidden;
+                overflow-y: hidden;
                 margin-top: 15%;
                 .galeria-titulo {
                     font-size: 16px;
@@ -437,8 +512,11 @@
                     text-align: center;
                     margin-top: 20px;
                     button {
-                        font-size: 18px;
                         padding: 10px 20px;
+
+                        a{
+                            font-size: 18px;
+                        }
                     }
                 }
             }
@@ -450,28 +528,50 @@
     
                 .comision-title {
                     h2 {
-                        font-size: 25px;
+                        font-size: 20px;
                         text-align: center;
-                        margin-top: 5px;
+                        margin-top: 2%;
+                        margin-left: 3%;
                     }
                 }
 
                 .comision-button {
+                    margin-left: 5%;
+                    margin-bottom: 5%;
                     button {
-                        width: 36vw;
+                        border-radius: 50px;
+                        border: 0;
+                        background-color: white;
+                        box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+                        letter-spacing: 1.5px;
+                        font-size: 10px;
+                        color: black;
+                        width: 23vw;
                         height: 10vw;
-                        margin-left: 5px;
-                        margin-bottom: 5px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+        
                         a {
-                            margin-bottom: 25px;
-                            font-size: 11px;
+                            text-decoration: none;
                             text-align: center;
                         }
+                    }
+                    
+                    button:hover {
+                        transform: none !important;
+                        transition: none !important;
+                    }
+                    
+                    button:active {
+                        transition: none !important;
+                        transform: none !important;
                     }
                 }
     
                 .comision-text {
-                    margin-right: 5px;
+                    margin-right: 2%;
+                    margin-left: 2%;
                     p {
                         font-size: 12px;
                         text-align: justify;
@@ -485,11 +585,11 @@
                 margin-bottom: 0;
     
                 .about-ix-title {
-                    font-size: 23px;
+                    font-size: 20px;
                 }
     
                 .about-ix-text p {
-                    font-size: 20px;
+                    font-size: 15px;
                     text-align: justify;
                 }
     
@@ -514,17 +614,60 @@
 
     // COMISIONES
     .comision-body {
-        background-size: cover;
-        .comision-section {
-            height: auto;
-            //margin-bottom: 90%;
-            h2 {
-                font-size: 20px;
+        .comision-main {
+            .com-form-title {
+                h1 {
+                    font-size: 25px;
+                }
+                h2 {
+                    font-size: 20px;
+                }
             }
-            .FAQ {
-                margin: 0 3% 0 2%;
+            .pricing-table {
                 display: grid;
                 grid-template-columns: 1fr;
+                gap: 15px;
+                align-items: center;
+                justify-content: center;
+
+                .pricing-card {
+                    width: 100%;
+                    .imageContainer {
+                        transform: none;
+                        transition: none;
+                        gap: 10px;
+
+                        img {
+                            transition: none;
+                            object-fit: cover;
+                        }
+                        img:hover {
+                            transform: none;
+                        }
+                    }
+                }
+
+                .pricing-card:hover{
+                    transform: none;
+                }
+            }
+
+            .form-container {
+                margin-top: 10%;
+            }
+        }
+        .comision-section {
+            height: auto;
+            h2 {
+                font-size: 20px;
+                text-align: center;
+            }
+            .FAQ {
+                margin: 0 5% 0 5%;
+                padding-bottom: 15%;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 15px;
                 h2 {
                     text-align: left;
                     text-decoration: underline;
@@ -533,7 +676,6 @@
                 p {
                     text-align: justify;
                     font-size: 15px;
-                    margin-bottom: 10%;
                 }
             }
         }
@@ -672,16 +814,36 @@
                 }
 
                 .comision-button {
+                    margin-left: 17%;
+                    margin-bottom: 5%;
                     button {
-                        width: 25vw;
+                        border-radius: 50px;
+                        border: 0;
+                        background-color: white;
+                        box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+                        letter-spacing: 1.5px;
+                        font-size: 15px;
+                        color: black;
+                        width: 23vw;
                         height: 7vw;
-                        margin-left: 25%;
-                        margin-bottom: 5%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+        
                         a {
-                            margin-bottom: 25px;
-                            font-size: 11px;
+                            text-decoration: none;
                             text-align: center;
                         }
+                    }
+                    
+                    button:hover {
+                        transform: none !important;
+                        transition: none !important;
+                    }
+                    
+                    button:active {
+                        transition: none !important;
+                        transform: none !important;
                     }
                 }
     
@@ -731,7 +893,6 @@
 
     // COMISIONES
     .comision-body {
-        background-size: cover;
         .comision-main {
             .com-form-title {
                 h1 {
@@ -741,18 +902,67 @@
                     font-size: 20px;
                 }
             }
+            .pricing-table {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin: 20px;
+                transform: none !important;
+                transition: none !important;
+
+                .pricing-card {
+                    display: flex;
+                    align-items: flex-start;
+                    width: auto;
+                    transition: none !important;
+                    transform: none !important;
+
+                    .cardContainer {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 5%;
+
+                        .imageContainer {
+                            img {
+                                object-fit: cover;
+                                transform: none !important;
+                                transition: none !important;
+                                pointer-events: none;
+                            }
+                            img:hover {
+                                display: none !important;
+                            }
+                        }
+                    }
+
+                    ul {
+                        margin-left: 15%;
+                        text-align: center;
+                    }
+                }
+
+                .pricing-card:hover {
+                    transform: none !important;
+                }
+                
+            }
+            .form-container {
+                margin-top: 5%;
+            }
         }
 
         .comision-section {
             height: auto;
-            //margin-bottom: 90%;
             h2 {
                 font-size: 20px;
+                text-align: center;
             }
             .FAQ {
-                margin: 0 3% 0 2%;
+                margin: 0 5% 0 5%;
+                padding-bottom: 15%;
                 display: grid;
                 grid-template-columns: 1fr;
+                gap: 15px;
                 h2 {
                     text-align: left;
                     text-decoration: underline;
@@ -761,16 +971,6 @@
                 p {
                     text-align: justify;
                     font-size: 15px;
-                    margin-bottom: 10%;
-                }
-
-                .Q1,
-                .Q2,
-                .Q3,
-                .Q4,
-                .Q5,
-                .Q6 {
-                    height: 100px;
                 }
             }
         }
@@ -908,6 +1108,68 @@
                     }
                 }
             }
+
+            .comision-container {
+                .comision-button {
+                    margin-right: 5%;
+                }
+            }
+        }
+    }
+
+    // COMISIONES
+    .comision-body {
+        .comision-main {
+            .com-form-title {
+                h1 {
+                    font-size: 25px;
+                }
+                h2 {
+                    font-size: 20px;
+                }
+            }
+            .pricing-table {
+                .pricing-card {
+                    width: 190px;
+
+                    .cardContainer {
+                        h2 {
+                            font-size: 20px;
+                        }
+                        p {
+                            font-size: 15px;
+                        }
+                        .imageContainer {
+                            img {
+                                width: 50px;
+                                height: 60px;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                }
+            }
+            .form-container {
+                margin-top: 5%;
+            }
+        }
+        .comision-section {
+            height: auto;
+            h2 {
+                text-align: center;
+            }
+            .FAQ {
+                padding: 0 4% 0 3%;
+                h2 {
+                    text-align: left;
+                    text-decoration: underline;
+                }
+                ul {
+                    li {
+                        padding: 5px;
+                    }
+                }
+            }
         }
     }
 }
@@ -930,6 +1192,28 @@
 
         .galeria {
             margin-top: 10%;
+        }
+    }
+
+    .comision-body {
+        .comision-main {
+            .pricing-table {
+                .pricing-card {
+                    width: 230px;
+                }
+
+                .cardContainer {
+                    .imageContainer {
+                        img {
+                            width: 65px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+            .form-container {
+                margin-top: 5%;
+            }
         }
     }
 }

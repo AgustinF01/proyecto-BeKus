@@ -4,6 +4,7 @@ header {
         grid-template-columns: 150px auto;
         align-items: center;
         position: relative;
+        font-family: $font;
 
         .logo a {
             color: $color-text;
@@ -17,46 +18,43 @@ header {
             display: flex;
             justify-content: flex-end;
             gap: 20px;
-        }
 
-        .menu-links ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-        }
-        
-        .menu-links ul li {
-            display: inline;
-        }
-        
-        .menu-links ul a {
-            position: relative;
-            cursor: pointer;
-            color: $color-text;
-            text-decoration: none;
-            font-size: 20px;
-            padding: 0.5rem 1rem;
-            transition: color 0.25s;
-        }
+            ul {
+                display: flex;
+                list-style: none;
+                padding: 0;
 
-        .menu-links ul a::after {
-            position: absolute;
-            content: "";
-            inset: 0;
-            background: white;
-            scale: 1 0;
-            z-index: -1;
-            transition: 0.45s;
-            border-radius: 10px;
-        }
+                li {
+                    display: inline;
 
-        .menu-links ul a:hover {
-            color: black;
-        }
-        
-        .menu-links ul a:hover:after {
-            scale: 1 1;
-
+                    a {
+                        position: relative;
+                        cursor: pointer;
+                        color: $color-text;
+                        text-decoration: none;
+                        font-size: 20px;
+                        padding: 0.5rem 1rem;
+                        transition: color 0.25s;
+                    }
+                    a::after {
+                        position: absolute;
+                        content: "";
+                        inset: 0;
+                        background: white;
+                        scale: 1 0;
+                        z-index: -1;
+                        transition: 0.45s;
+                        border-radius: 10px;
+                    }
+                    a:hover {
+                        color: black;
+                    }
+                    a:hover:after {
+                        scale: 1 1;
+            
+                    }
+                }
+            }
         }
     }
 }

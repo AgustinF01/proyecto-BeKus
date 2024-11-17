@@ -4,6 +4,7 @@ $color-secondary: #812e2e; // Para botones secundarios o inactivos y combinacion
 $color-accent: #c54040; // Generalmente para elementos o diferenciar background
 $color-background: #0c0806; // Fondo claro
 $color-text: #f1e9e5; // Texto oscuro
+$font: "Playfair Display", serif;
 
 // MAPA
 $colors: (
@@ -12,6 +13,7 @@ $colors: (
   accent: $color-accent,
   background: $color-background,
   text: $color-text,
+  font-family: $font,
 );
 
 * {

@@ -1,5 +1,6 @@
 .about-body {
     background-color: #362d29;
+    font-family: $font;
     .about-main {
         .about-portada {
             width: 100%;
@@ -64,31 +65,61 @@
 
     .about-btn {
         display: flex;
-        align-items: center;
         justify-content: center;
-        
+        align-items: center;
+        margin: 5% 0 5% 0;
+
         button {
-            width: 180px;
-            height: 70px;
-            background-color: transparent;
-            border: 1px solid transparent;
-            cursor: pointer;
-            border-radius: 10px;
-            color: $color-text;
-            font-size: 25px;
-            margin-top: 5%;
-            margin-bottom: 5%;
-            transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+            background-color: none;
+            text-decoration: none;
+            background-color: #362d29;
+            border: none;
 
             a {
-                color: $color-text;
+                position: relative;
+                display: inline-block;
+                padding: 15px 30px;
+                border: 2px solid #fefefe;
+                text-transform: uppercase;
+                color: #fefefe;
                 text-decoration: none;
+                font-weight: 600;
+                font-size: 20px;
+
+                span {
+                    position: relative;
+                    z-index: 3;
+                  }
             }
-        }
-        button:hover {
-            color: $color-text;
-            border: 1px solid gray;
-            box-shadow: 0 0 40px 40px #1f1a18 inset;
+            a::before {
+                content: '';
+                position: absolute;
+                top: 6px;
+                left: -2px;
+                width: calc(100% + 4px);
+                height: calc(100% - 12px);
+                background-color: #362d29;
+                transition: 0.3s ease-in-out;
+                transform: scaleY(1);
+            }
+            a:hover::before {
+                transform: scaleY(0);
+            }
+            a::after {
+                content: '';
+                position: absolute;
+                left: 6px;
+                top: -2px;
+                height: calc(100% + 4px);
+                width: calc(100% - 12px);
+                background-color: #362d29;
+                transition: 0.3s ease-in-out;
+                transform: scaleX(1);
+                transition-delay: 0.5s;
+            }
+            a:hover::after {
+                transform: scaleX(0);
+            }                  
         }
     }
 }
