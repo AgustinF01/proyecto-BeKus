@@ -1,12 +1,12 @@
 Cambios pendientes necesarios:
--Cambiar fuente del texto.
+-Cambiar fuente del texto. (ARREGLADO)
 -Ajuste del tamaño de texto en dispositivos moviles. (PENDIENTE DE TESTEO)
 -Ajustar espacio entre links en el menu desplegable. (ARREGLADO)
 
 Cambios opcionales:
 -Cambio de diseño de botones (opcional). (ARREGLADO)
 -Estilizar parrafo "sobre mi" en el index (opcional). (ARREGLADO)
--Estilizar FAQ (opcional).
+-Estilizar FAQ (opcional). (ARREGLADO)
 -Espaciar o diferenciar el contacto por redes sociales del footer en la seccion de "Contacto" (opcional). (ARREGLADO)
 
 Problemas conocidos pendiente de arreglo:
