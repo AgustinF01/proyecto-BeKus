@@ -288,6 +288,9 @@
 
             .form-container {
                 margin-top: 10%;
+                animation: none;
+                border-radius: 8px;
+                border: 2px solid $color-primary;
             }
         }
         .comision-section {
@@ -573,7 +576,7 @@
                     margin-right: 2%;
                     margin-left: 2%;
                     p {
-                        font-size: 12px;
+                        font-size: 18px;
                         text-align: justify;
                     }
                 }
@@ -589,7 +592,7 @@
                 }
     
                 .about-ix-text p {
-                    font-size: 15px;
+                    font-size: 18px;
                     text-align: justify;
                 }
     
@@ -654,6 +657,9 @@
 
             .form-container {
                 margin-top: 10%;
+                animation: none;
+                border-radius: 8px;
+                border: 2px solid $color-primary;
             }
         }
         .comision-section {
@@ -886,7 +892,7 @@
         overflow-x: hidden;
         .portfolio-main {
             h1 {
-                font-size: 15px;
+                font-size: 25px;
             }
         }
     }
