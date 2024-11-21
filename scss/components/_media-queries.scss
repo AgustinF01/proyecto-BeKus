@@ -350,6 +350,17 @@
         }
     }
 
+    // CONTACTO
+    .contact-body {
+        .contacto-main {
+            .form-container {
+                animation: none;
+                border-radius: 8px;
+                border: 2px solid $color-primary;
+            }
+        }
+    }
+
     .footer {
         width: 100%;
         .footer-menu {
@@ -715,6 +726,17 @@
                     margin-top: 2%;
                     font-size: 14px;
                 }
+            }
+        }
+    }
+
+    // CONTACTO
+    .contact-body {
+        .contacto-main {
+            .form-container {
+                animation: none;
+                border-radius: 8px;
+                border: 2px solid $color-primary;
             }
         }
     }
