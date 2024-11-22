@@ -16,13 +16,13 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #190c0b;
+  background-color: #0C0C0C;
   border-radius: 5px;
 }
 
 body {
   color: whitesmoke;
-  background-color: #190c0b;
+  background-color: #0C0C0C;
   overflow-x: hidden;
 }
 
@@ -301,7 +301,7 @@ header nav .menu-links ul li a:hover:after {
 .index-body .index-main .galeria .boton-portfolio button {
   background-color: none;
   text-decoration: none;
-  background-color: #190c0b;
+  background-color: #0C0C0C;
   border: none;
 }
 .index-body .index-main .galeria .boton-portfolio button a {
@@ -326,7 +326,7 @@ header nav .menu-links ul li a:hover:after {
   left: -2px;
   width: calc(100% + 4px);
   height: calc(100% - 12px);
-  background-color: #190c0b;
+  background-color: #0C0C0C;
   transition: 0.3s ease-in-out;
   transform: scaleY(1);
 }
@@ -340,7 +340,7 @@ header nav .menu-links ul li a:hover:after {
   top: -2px;
   height: calc(100% + 4px);
   width: calc(100% - 12px);
-  background-color: #190c0b;
+  background-color: #0C0C0C;
   transition: 0.3s ease-in-out;
   transform: scaleX(1);
   transition-delay: 0.5s;
@@ -537,7 +537,7 @@ header nav .menu-links ul li a:hover:after {
 .portfolio-body .portfolio-main .comision-button button {
   background-color: none;
   text-decoration: none;
-  background-color: #190c0b;
+  background-color: #0C0C0C;
   border: none;
 }
 .portfolio-body .portfolio-main .comision-button button a {
@@ -562,7 +562,7 @@ header nav .menu-links ul li a:hover:after {
   left: -2px;
   width: calc(100% + 4px);
   height: calc(100% - 12px);
-  background-color: #190c0b;
+  background-color: #0C0C0C;
   transition: 0.3s ease-in-out;
   transform: scaleY(1);
 }
@@ -576,7 +576,7 @@ header nav .menu-links ul li a:hover:after {
   top: -2px;
   height: calc(100% + 4px);
   width: calc(100% - 12px);
-  background-color: #190c0b;
+  background-color: #0C0C0C;
   transition: 0.3s ease-in-out;
   transform: scaleX(1);
   transition-delay: 0.5s;
@@ -589,7 +589,7 @@ header nav .menu-links ul li a:hover:after {
   background-repeat: no-repeat;
   background-size: fill;
   background-position: center;
-  background-color: #190c0b;
+  background-color: #0C0C0C;
   font-family: "Playfair Display", serif;
 }
 .comision-body .comision-main .pricing-table {
@@ -604,7 +604,7 @@ header nav .menu-links ul li a:hover:after {
   width: 270px;
   text-align: center;
   box-shadow: 0 10px 15px 15px rgba(0, 0, 0, 0.2);
-  background-color: rgba(43, 20, 18, 0.8274509804);
+  background-color: #171717;
   transition: transform 0.3s;
 }
 .comision-body .comision-main .pricing-table .pricing-card .exchange {
@@ -653,18 +653,10 @@ header nav .menu-links ul li a:hover:after {
   max-width: 600px;
   margin: auto;
   margin-top: 5%;
-  background-color: #190c0b;
+  background-color: #0C0C0C;
   padding: 20px;
   border-radius: 8px;
-  animation: glow 1.5s infinite alternate;
-}
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 5px rgba(10, 10, 10, 0.7), 0 0 10px rgba(255, 132, 17, 0.753), 0 0 15px rgba(255, 0, 0, 0.3);
-  }
-  100% {
-    box-shadow: 0 0 20px rgb(255, 0, 0), 0 0 30px rgba(216, 1, 1, 0.8), 0 0 40px rgba(255, 0, 0, 0.6);
-  }
+  box-shadow: 0 0 20px rgb(255, 0, 0), 0 0 30px rgba(216, 1, 1, 0.8), 0 0 40px rgba(255, 0, 0, 0.6);
 }
 .comision-body .comision-main .form-container h3 {
   text-align: center;
@@ -791,7 +783,7 @@ header nav .menu-links ul li a:hover:after {
 }
 
 .comision-section {
-  background-color: #190c0b;
+  background-color: #0C0C0C;
   width: 100%;
   height: auto;
   margin-top: 10%;
@@ -824,7 +816,7 @@ header nav .menu-links ul li a:hover:after {
 
 .about-body {
   font-family: "Playfair Display", serif;
-  background-color: #2b1412;
+  background-color: #0C0C0C;
 }
 .about-body .about-main .about-portada {
   width: 100%;
@@ -886,7 +878,7 @@ header nav .menu-links ul li a:hover:after {
 .about-body .about-btn button {
   background-color: none;
   text-decoration: none;
-  background-color: #2b1412;
+  background-color: #0C0C0C;
   border: none;
 }
 .about-body .about-btn button a {
@@ -911,7 +903,7 @@ header nav .menu-links ul li a:hover:after {
   left: -2px;
   width: calc(100% + 4px);
   height: calc(100% - 12px);
-  background-color: #2b1412;
+  background-color: #0C0C0C;
   transition: 0.3s ease-in-out;
   transform: scaleY(1);
 }
@@ -925,7 +917,7 @@ header nav .menu-links ul li a:hover:after {
   top: -2px;
   height: calc(100% + 4px);
   width: calc(100% - 12px);
-  background-color: #2b1412;
+  background-color: #0C0C0C;
   transition: 0.3s ease-in-out;
   transform: scaleX(1);
   transition-delay: 0.5s;
@@ -936,7 +928,7 @@ header nav .menu-links ul li a:hover:after {
 
 .contact-body {
   font-family: "Playfair Display", serif;
-  background: #190c0b;
+  background: #0C0C0C;
 }
 .contact-body .contact-main .contact-title h1 {
   margin-top: 15px;
@@ -952,20 +944,12 @@ header nav .menu-links ul li a:hover:after {
   max-width: 600px;
   margin: auto;
   margin-top: 5%;
-  background-color: #190c0b;
+  background-color: #0C0C0C;
   backdrop-filter: blur(10px);
   padding: 20px;
   border: none;
   border-radius: 8px;
-  animation: glow 1.5s infinite alternate;
-}
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 5px rgba(10, 10, 10, 0.7), 0 0 10px rgba(255, 132, 17, 0.753), 0 0 15px rgba(255, 0, 0, 0.3);
-  }
-  100% {
-    box-shadow: 0 0 20px rgb(255, 0, 0), 0 0 30px rgba(216, 1, 1, 0.8), 0 0 40px rgba(255, 0, 0, 0.6);
-  }
+  box-shadow: 0 0 20px rgb(255, 0, 0), 0 0 30px rgba(216, 1, 1, 0.8), 0 0 40px rgba(255, 0, 0, 0.6);
 }
 .contact-body .contact-main .form-container h3 {
   text-align: center;
@@ -1144,6 +1128,9 @@ header nav .menu-links ul li a:hover:after {
 }
 .footer .footer-derechos p {
   font-size: 20px;
+}
+.footer .footer-derechos a {
+  color: #f1e9e5;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -1350,6 +1337,12 @@ header nav .menu-links ul li a:hover:after {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  .comision-body .comision-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .comision-body .comision-main .com-form-title h1 {
     font-size: 25px;
   }
@@ -1372,20 +1365,29 @@ header nav .menu-links ul li a:hover:after {
     gap: 10px;
   }
   .comision-body .comision-main .pricing-table .pricing-card .imageContainer img {
+    width: 20vw;
+    height: 25vw;
     transition: none;
     object-fit: cover;
   }
   .comision-body .comision-main .pricing-table .pricing-card .imageContainer img:hover {
     transform: none;
   }
+  .comision-body .comision-main .pricing-table .pricing-card .price {
+    font-size: 30px;
+  }
+  .comision-body .comision-main .pricing-table .pricing-card ul li {
+    font-size: 20px;
+  }
   .comision-body .comision-main .pricing-table .pricing-card:hover {
     transform: none;
   }
   .comision-body .comision-main .form-container {
-    margin-top: 10%;
-    animation: none;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
     border-radius: 8px;
-    border: 2px solid #e2a09c;
+    box-shadow: 0 0 5px rgb(255, 0, 0), 0 0 15px rgba(216, 1, 1, 0.8), 0 0 20px rgba(255, 0, 0, 0.6);
   }
   .comision-body .comision-section {
     height: auto;
@@ -1434,6 +1436,19 @@ header nav .menu-links ul li a:hover:after {
   .about-body .about-main .about-section .about-pt2 {
     margin-top: 2%;
     font-size: 14px;
+  }
+  .contact-body .contact-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-body .contact-main .form-container {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgb(255, 0, 0), 0 0 15px rgba(216, 1, 1, 0.8), 0 0 20px rgba(255, 0, 0, 0.6);
   }
   .footer {
     width: 100%;
@@ -1653,6 +1668,12 @@ header nav .menu-links ul li a:hover:after {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  .comision-body .comision-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .comision-body .comision-main .com-form-title h1 {
     font-size: 25px;
   }
@@ -1675,20 +1696,29 @@ header nav .menu-links ul li a:hover:after {
     gap: 10px;
   }
   .comision-body .comision-main .pricing-table .pricing-card .imageContainer img {
+    width: 20vw;
+    height: 25vw;
     transition: none;
     object-fit: cover;
   }
   .comision-body .comision-main .pricing-table .pricing-card .imageContainer img:hover {
     transform: none;
   }
+  .comision-body .comision-main .pricing-table .pricing-card .price {
+    font-size: 30px;
+  }
+  .comision-body .comision-main .pricing-table .pricing-card ul li {
+    font-size: 20px;
+  }
   .comision-body .comision-main .pricing-table .pricing-card:hover {
     transform: none;
   }
   .comision-body .comision-main .form-container {
-    margin-top: 10%;
-    animation: none;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
     border-radius: 8px;
-    border: 2px solid #e2a09c;
+    box-shadow: 0 0 5px rgb(255, 0, 0), 0 0 15px rgba(216, 1, 1, 0.8), 0 0 20px rgba(255, 0, 0, 0.6);
   }
   .comision-body .comision-section {
     height: auto;
@@ -1737,6 +1767,19 @@ header nav .menu-links ul li a:hover:after {
   .about-body .about-main .about-section .about-pt2 {
     margin-top: 2%;
     font-size: 14px;
+  }
+  .contact-body .contact-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-body .contact-main .form-container {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgb(255, 0, 0), 0 0 25px rgba(216, 1, 1, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
   }
   .footer {
     width: 100%;

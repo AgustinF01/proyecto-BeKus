@@ -249,6 +249,10 @@
     // COMISIONES
     .comision-body {
         .comision-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             .com-form-title {
                 h1 {
                     font-size: 25px;
@@ -272,11 +276,21 @@
                         gap: 10px;
 
                         img {
+                            width: 20vw;
+                            height: 25vw;
                             transition: none;
                             object-fit: cover;
                         }
                         img:hover {
                             transform: none;
+                        }
+                    }
+                    .price {
+                        font-size: 30px;
+                    }
+                    ul {
+                        li {
+                            font-size: 20px;
                         }
                     }
                 }
@@ -287,10 +301,13 @@
             }
 
             .form-container {
-                margin-top: 10%;
-                animation: none;
+                margin-left: 5%;
+                margin-right: 5%;
+                width: 90%;
                 border-radius: 8px;
-                border: 2px solid $color-primary;
+                box-shadow: 0 0 5px rgb(255, 0, 0), 
+                            0 0 15px rgba(216, 1, 1, 0.8), 
+                            0 0 20px rgba(255, 0, 0, 0.6);
             }
         }
         .comision-section {
@@ -350,6 +367,26 @@
         }
     }
 
+    // CONTACTO
+    .contact-body {
+        .contact-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .form-container {
+                margin-left: 5%;
+                margin-right: 5%;
+                width: 90%;
+                border-radius: 8px;
+                box-shadow: 0 0 5px rgb(255, 0, 0), 
+                            0 0 15px rgba(216, 1, 1, 0.8), 
+                            0 0 20px rgba(255, 0, 0, 0.6);
+            }
+        }
+    }
+
+    // FOOTER
     .footer {
         width: 100%;
         .footer-menu {
@@ -618,6 +655,10 @@
     // COMISIONES
     .comision-body {
         .comision-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             .com-form-title {
                 h1 {
                     font-size: 25px;
@@ -641,11 +682,21 @@
                         gap: 10px;
 
                         img {
+                            width: 20vw;
+                            height: 25vw;
                             transition: none;
                             object-fit: cover;
                         }
                         img:hover {
                             transform: none;
+                        }
+                    }
+                    .price {
+                        font-size: 30px;
+                    }
+                    ul {
+                        li {
+                            font-size: 20px;
                         }
                     }
                 }
@@ -656,10 +707,13 @@
             }
 
             .form-container {
-                margin-top: 10%;
-                animation: none;
+                margin-left: 5%;
+                margin-right: 5%;
+                width: 90%;
                 border-radius: 8px;
-                border: 2px solid $color-primary;
+                box-shadow: 0 0 5px rgb(255, 0, 0), 
+                            0 0 15px rgba(216, 1, 1, 0.8), 
+                            0 0 20px rgba(255, 0, 0, 0.6);
             }
         }
         .comision-section {
@@ -719,6 +773,26 @@
         }
     }
 
+    // CONTACTO
+    .contact-body {
+        .contact-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .form-container {
+                margin-left: 5%;
+                margin-right: 5%;
+                width: 90%;
+                border-radius: 8px;
+                box-shadow: 0 0 15px rgb(255, 0, 0), 
+                            0 0 25px rgba(216, 1, 1, 0.8), 
+                            0 0 30px rgba(255, 0, 0, 0.6);
+            }
+        }
+    }
+
+    // FOOTER
     .footer {
         width: 100%;
         .footer-menu {

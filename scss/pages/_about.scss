@@ -1,6 +1,6 @@
 .about-body {
     font-family: $font;
-    background-color: #2b1412;
+    background-color: #0C0C0C;
     .about-main {
         .about-portada {
             width: 100%;
@@ -63,7 +63,7 @@
         }
     }
     .about-btn {
-        @include button-style(#2b1412);
+        @include button-style(#0C0C0C);
         margin-bottom: 5%;
     }
 }

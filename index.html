@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <!-- ---------------- -->
-    <title>BeKus - Artista</title>
+    <title id="web-title">BeKus - Artista</title>
 </head>
 
 <body class="index-body">
@@ -43,11 +43,11 @@
     
             <div class="menu-links" id="nav-links">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="./pages/portfolio.html">Portafolio</a></li>
-                    <li><a href="./pages/commissions.html">Comisiones</a></li>
-                    <li><a href="./pages/about.html">Sobre Mi</a></li>
-                    <li><a href="./pages/contact.html">Contacto</a></li>
+                    <li><a href="index.html" data-translate="nav-index">Inicio</a></li>
+                    <li><a href="./pages/portfolio.html" data-translate="nav-portfolio">Portafolio</a></li>
+                    <li><a href="./pages/commissions.html" data-translate="nav-commissions">Comisiones</a></li>
+                    <li><a href="./pages/about.html" data-translate="nav-about">Sobre Mi</a></li>
+                    <li><a href="./pages/contact.html" data-translate="nav-contact">Contacto</a></li>
                 </ul>
             </div>
         </nav>
@@ -59,7 +59,7 @@
             <div class="image-container">
                 <img src="./img/portada-arl-2.png" alt="Imagen de fondo">
                 <div class="text">
-                    <span class="part1">BeKus</span><span class="part2">Artista</span>
+                    <span class="part1">BeKus</span><span class="part2" data-translate="part2">Artista</span>
                 </div>
             </div>
         </section>
@@ -73,7 +73,7 @@
         <!-- Carousel -->
         <section class="galeria">
             <div class="galeria-titulo" data-aos="fade-up" data-aos-duration="700">
-                <h1>Algunos de mis trabajos</h1>
+                <h1 data-translate="gallery-title">Algunos de mis trabajos</h1>
             </div>
             <div class="carousel-container" data-aos="fade-up" data-aos-duration="600">
                 <div class="box box-1"></div>
@@ -87,7 +87,7 @@
             </div>
         
             <div class="boton-portfolio" data-aos="fade-up" data-aos-duration="800">
-                <button><a href="./pages/portfolio.html"><span>Ver mas</span></a></button>
+                <button><a href="./pages/portfolio.html"><span data-translate="idx-portfolio-btn">Ver mas</span></a></button>
             </div>
         </section>
 
@@ -95,17 +95,17 @@
         <section>
             <div class="comision-container" data-aos="fade-right" data-aos-duration="1000">
                 <div class="comision-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-                    <h2>¡Comisiones Abiertas!</h2>
+                    <h2 data-translate="idx-com-title">¡Comisiones Abiertas!</h2>
                 </div>
 
                 <div class="comision-button" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
                     <button>
-                        <a href="pages/commissions.html">HAZ TU PEDIDO</a>
+                        <a href="pages/commissions.html" data-translate="idx-com-btn">HAZ TU PEDIDO</a>
                     </button>
                 </div>
 
                 <div class="comision-text" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <p>¡Comisiones abiertas para el mes de diciembre!. Haz tu pedido en el apartado de comisiones. Los cupos son limitados asi que no te quedes fuera.</p>
+                    <p data-translate="idx-com-text">¡Comisiones abiertas para el mes de diciembre!. Haz tu pedido en el apartado de comisiones. Los cupos son limitados asi que no te quedes fuera.</p>
                 </div>
             </div>
         </section>
@@ -114,11 +114,11 @@
         <section>
             <div class="about-index" data-aos="fade-right" data-aos-duration="1000">
                 <div class="about-ix-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-                    <h2>Sobre mi</h2>
+                    <h2 data-translate="idx-about-title">Sobre mi</h2>
                 </div>
 
                 <div class="about-ix-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
-                    <p>Soy BeKus, una artista gráfico apasionado por la creación de personajes únicos. Con más de 5 años de experiencia en ilustración digital y tradicional, he tenido el placer de colaborar con clientes de todo el mundo, desde editoriales hasta marcas de videojuegos. Mi estilo combina realismo con diseños fantasiosos muy detallados, reflejando mi amor por la narrativa visual y la exploración de la imaginación.</p>
+                    <p data-translate="idx-about-text">Soy BeKus, una artista gráfico apasionado por la creación de personajes únicos. Con más de 5 años de experiencia en ilustración digital y tradicional, he tenido el placer de colaborar con clientes de todo el mundo, desde editoriales hasta marcas de videojuegos. Mi estilo combina realismo con diseños fantasiosos muy detallados, reflejando mi amor por la narrativa visual y la exploración de la imaginación.</p>
                 </div>
                 <div class="about-ix-img" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <img src="./img/about-index.jpg" alt="">
@@ -129,7 +129,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <h3>BeKus - Artista Gráfico</h3>
+        <h3 data-translate="footer-title">BeKus - Artista Gráfico</h3>
         
         <div class="footer-icon">
             <ul>
@@ -144,16 +144,16 @@
 
         <div class="footer-menu">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="./pages/portfolio.html">Portafolio</a></li>
-                <li><a href="./pages/commissions.html">Comisiones</a><li>
-                <li><a href="./pages/about.html">Sobre Mi</a></li>
-                <li><a href="./pages/contact.html">Contacto</a></li>
+                <li><a href="index.html" data-translate="footer-menu-index">Inicio</a></li>
+                <li><a href="./pages/portfolio.html" data-translate="footer-menu-portfolio">Portafolio</a></li>
+                <li><a href="./pages/commissions.html" data-translate="footer-menu-commissions">Comisiones</a><li>
+                <li><a href="./pages/about.html" data-translate="footer-menu-about">Sobre Mi</a></li>
+                <li><a href="./pages/contact.html" data-translate="footer-menu-contact">Contacto</a></li>
             </ul>
         </div>
 
         <div class="footer-derechos">
-            <p>&copy; BeKus - 2024. Todos los derechos reservados.</p>
+            <p data-translate="copyrights">&copy; 2024 BeKus. Todos los derechos reservados | Desarrollado por <a href="https://www.linkedin.com/in/agustin-farias-tester-qa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Agustin Farias</a></p>
         </div>
     </footer>
     <script src="./js/index.js"></script>
