@@ -1,9 +1,9 @@
-                                                Proyecto BeKus
+Proyecto BeKus
 Este es un proyecto desarrollado durante el transcurso del curso de desarrollo web en Coderhouse. La idea era darle una solucion al artista que se menciona en el sitio, el cual no contaba con un sitio web para mostrar su trabajo y sus medios de contacto estaban dispersos por diversos enlaces.
 
 La idea provino de uno de sus trabajos subido a las redes sociales y se intento mantener la estetica y colores estilo dark que representan los trabajos del artista.
 
-                                                Desarrollo
+Desarrollo
 El sitio fue desarrollado con HTML5, CSS3 para el front y JavaScript para el funcionamiento del menu desplegable en dispositivos moviles. Se utilizo la libreria AOS "https://michalsnik.github.io/aos/" para las animaciones de entrada al cargar la pagina y Font Awesome "https://fontawesome.com/" para los iconos ubicados en el footer.
 
 El sitio es completamente responsivo adpantando el contenido a diversas resoluciones de pantallas y se utilizo SASS para mantener una estructura limpia y ordenada de los estilos permitiendo asi una facil modificación del sitio de ser necesario, asi como una facil lectura y comprension para cualquier desarrollador.
